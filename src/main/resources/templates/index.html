@@ -76,25 +76,23 @@
 			</div>
 			<div class="footer">
 				<ul>
-					<li>
-						<h2><a href="featured.html">Featured Recipes</a></h2>
+					<li th:each = "recipe : ${allRecipes}">
+						<h2><a href="featured.html" th:text = "${recipe.name}">Featured Recipes</a></h2>
+						<span th:text = "${recipe.tags}">tag</span>
+
 						<a href="featured.html"><img src="images/featured.jpg" alt="Image"></a>
 					</li>
-					<li>
-						<h2><a href="recipes.html">A to Z Recipes</a></h2>
-						<a href="recipes.html"><img src="images/a-z.jpg" alt="Image"></a>
-					</li>
 				</ul>
-				<ul>
-					<li>
-						<h2><a href="videos.html">Videos</a></h2>
-						<a href="videos.html"><img src="images/videos.jpg" alt="Image"></a>
-					</li>
-					<li>
-						<h2><a href="blog.html">Blog</a></h2>
-						<a href="blog.html"><img src="images/blog.jpg" alt="Image"></a>
-					</li>
-				</ul>
+				<!--<ul>-->
+					<!--<li>-->
+						<!--<h2><a href="videos.html">Videos</a></h2>-->
+						<!--<a href="videos.html"><img src="images/videos.jpg" alt="Image"></a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<h2><a href="blog.html">Blog</a></h2>-->
+						<!--<a href="blog.html"><img src="images/blog.jpg" alt="Image"></a>-->
+					<!--</li>-->
+				<!--</ul>-->
 			</div>
 		</div>
 		<div>

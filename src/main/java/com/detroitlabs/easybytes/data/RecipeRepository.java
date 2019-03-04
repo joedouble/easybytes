@@ -33,7 +33,8 @@ public class RecipeRepository {
                     "America", false)
             );
 
-    public static List<Recipe> getAllRecipes() {
+    public List<Recipe> getAllRecipes() {
         return ALL_RECIPES;
     }
+
 }
