@@ -44,7 +44,7 @@ public class RecipeRepository {
                             "\nTo serve, open pita pockets up. Spread a little tahini sauce or Tzatziki sauce, add chicken shawarma, arugula, Mediterranean salad and pickles or olives, if you like. Serve immediately!")),
                     "America", true),
 
-            new Recipe("murghMakhani", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
+            new Recipe("Indian Buffet", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
                     new ArrayList<String>(Arrays.asList("1 lb. boneless chicken breast, cut into 1 ½ inch cubes (see notes)", "2 tablespoons tandoori masala ", "1 teaspoon EACH: ginger paste and garlic paste (I used Gourmet Garden)", "½ cup yogurt", "1 tablespoon oil", "2 tablespoons ghee (clarified butter)", "1 large onion, thinly sliced"
                     "1 ½ teaspoon EACH: ginger paste and garlic paste ", "1 (14.5 ounce) can crushed tomatoes", "1 teaspoon chili powder", "1 1/2 tablespoon coriander powder", "1 1/2 teaspoon cumin powder", "1/2 cup heavy whipping cream", "1/2 teaspoon garam masala", "¼ teaspoon dried fenugreek leaves (crushed between fingers)")),
                     new ArrayList<String>(Arrays.asList("In a medium bowl, combine the tandoori masala, ginger, garlic, and yogurt. Whisk until smooth, adjust seasonings to preference. Add the chicken and allow to marinate for at least 20 minutes and ideally for 12-24 hours, covered in the refrigerator.",
@@ -52,20 +52,10 @@ public class RecipeRepository {
                             "\n Remove from heat, add the mixture to a blender and blend until smooth, you may need to add a couple water to help it blend (up to ¼ cup).  Depending on how powerful your blender is, you may want to blend the mixture in two batches. Remember to hold the lid of the blender down with a kitchen towel when blending, to avoid accidents.",
                             "\nMAKE AHEAD OPTION: At this point you can cool and refrigerate the sauce for 24-48 hours (or freeze it for up to 3 months), it will help blend the flavors even more, just remember to bring the sauce back to room temperature (use the microwave) before proceeding with the recipe OR you can continue on with the recipe immediately.",
                             "\nHeat the remaining tablespoon of oil in the dutch oven over medium heat. Add the marinated chicken (discard any excess marinade) and cook for about 5-6 minutes, stirring as required to brown all sides. Add the butter chicken sauce to the pot and heat everything through. Once it starts to bubble, add the cream and garam masala. When the sauce regains a simmer, add the crushed fenugreek leaves. Serve over basmati rice or with naan.")),
-                    "Indian", false),
+                    "America", false)
 
-//                      new Recipe("Teriyaki chicken sushi roll", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
-//            new ArrayList<String>(Arrays.asList("1 lb. boneless chicken breast, cut into 1 ½ inch cubes (see notes)", "2 tablespoons tandoori masala ", "1 teaspoon EACH: ginger paste and garlic paste (I used Gourmet Garden)", "½ cup yogurt", "1 tablespoon oil", "2 tablespoons ghee (clarified butter)", "1 large onion, thinly sliced"
-//            "1 ½ teaspoon EACH: ginger paste and garlic paste ", "1 (14.5 ounce) can crushed tomatoes", "1 teaspoon chili powder", "1 1/2 tablespoon coriander powder", "1 1/2 teaspoon cumin powder", "1/2 cup heavy whipping cream", "1/2 teaspoon garam masala", "¼ teaspoon dried fenugreek leaves (crushed between fingers)")),
-//            new ArrayList<String>(Arrays.asList("In a medium bowl, combine the tandoori masala, ginger, garlic, and yogurt. Whisk until smooth, adjust seasonings to preference. Add the chicken and allow to marinate for at least 20 minutes and ideally for 12-24 hours, covered in the refrigerator.",
-//            "\nHeat the ghee in a dutch oven or heavy bottom pot over medium heat. Add the onions and sauté until they turn translucent and start to sweat, about 5-7 minutes, don’t allow the onions to brown. Add ginger and garlic paste and let cook for 30 seconds, stirring so it doesn’t burn. Add the can of crushed tomatoes along with the chili powder, coriander powder, and cumin powder and continue to cook for 5 minutes, if the mixture starts bubbling rapidly, add about ¼ cup of water and continue to cook.",
-//            "\n Remove from heat, add the mixture to a blender and blend until smooth, you may need to add a couple water to help it blend (up to ¼ cup).  Depending on how powerful your blender is, you may want to blend the mixture in two batches. Remember to hold the lid of the blender down with a kitchen towel when blending, to avoid accidents.",
-//            "\nMAKE AHEAD OPTION: At this point you can cool and refrigerate the sauce for 24-48 hours (or freeze it for up to 3 months), it will help blend the flavors even more, just remember to bring the sauce back to room temperature (use the microwave) before proceeding with the recipe OR you can continue on with the recipe immediately.",
-//            "\nHeat the remaining tablespoon of oil in the dutch oven over medium heat. Add the marinated chicken (discard any excess marinade) and cook for about 5-6 minutes, stirring as required to brown all sides. Add the butter chicken sauce to the pot and heat everything through. Once it starts to bubble, add the cream and garam masala. When the sauce regains a simmer, add the crushed fenugreek leaves. Serve over basmati rice or with naan.")),
-//            "America", false)
-//
-//
-//    );
+
+    );
 
     public List<Recipe> getAllRecipes() {
         return ALL_RECIPES;
