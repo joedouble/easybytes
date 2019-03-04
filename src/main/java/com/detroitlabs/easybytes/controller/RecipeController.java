@@ -9,7 +9,7 @@ public class RecipeController {
 
     @RequestMapping("/")
     public String displayHomepage(){
-        return "home";
+        return "index";
     }
 
 }
