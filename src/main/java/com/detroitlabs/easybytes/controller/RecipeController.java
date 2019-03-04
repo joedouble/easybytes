@@ -16,7 +16,7 @@ public class RecipeController {
     @RequestMapping("/")
     public String displayHomepage(ModelMap modelMap){
         modelMap.put("allRecipes", recipeRepository.getAllRecipes());
-        return "index";
+        return "home";
     }
 
 
