@@ -1,4 +1,4 @@
-package com.detroitlabs.easybytes.data;
+package com.detroitlabs.easybytes.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
