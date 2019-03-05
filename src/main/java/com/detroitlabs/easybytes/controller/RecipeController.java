@@ -36,11 +36,6 @@ public class RecipeController {
         return "search";
     }
 
-    @RequestMapping("/singlerecipe")
-    public String singleRecipe(){
-        return "singlerecipe";
-    }
-
     @RequestMapping("/singlerecipe/{name}")
     public String gifDetails(@PathVariable String name, ModelMap modelMap){
         Recipe singleRecipe = recipeRepository.findByName(name);

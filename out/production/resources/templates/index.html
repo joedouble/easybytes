@@ -3,11 +3,9 @@
 
 
 <head>
-    <title>Cook Note - Food Recipes HTML Template</title>
+    <title>Easy Bytes Recipe Finder</title>
     <meta name="author" content="Nile-Theme">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="recipes food, recipes , chinese food, italian food">
-    <meta name="description" content="Cook Note - Food & Recipes Food Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CPoppins:100,200,300i,300,400,700,400i,500%7CDancing+Script:700"
@@ -59,15 +57,15 @@
                             <li><a th:href="@{/search}">Search Page</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-2 col-md-12">
-                        <hr class="margin-bottom-0px d-block d-sm-none">
-                        <a href="addrecipe.html"
-                           class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i
-                                class="fas fa-plus"></i></a>
-                        <a href="login.html"
-                           class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i
-                                class="far fa-user"></i></a>
-                    </div>
+                    <!--<div class="col-lg-2 col-md-12">-->
+                        <!--<hr class="margin-bottom-0px d-block d-sm-none">-->
+                        <!--<a href="addrecipe.html"-->
+                           <!--class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
+                                <!--class="fas fa-plus"></i></a>-->
+                        <!--<a href="login.html"-->
+                           <!--class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
+                                <!--class="far fa-user"></i></a>-->
+                    <!--</div>-->
                 </div>
 
             </div>
@@ -76,13 +74,13 @@
 </header>
 <!-- // Header  -->
 
-<div class="banner padding-tb-20px background-overlay" style="background-image: url('assets/img/banner_1.jpg');">>
+<div class="banner padding-tb-20px background-overlay" th:style="'background-image: url(' + @{/assets/img/banner_1.jpg} + ');'">
     <div class="container">
 
         <div class="padding-tb-120px z-index-2 position-relative">
             <div class="text-center">
-                <h1 class="text-white pull-l icon-large font-weight-500 margin-bottom-40px">Recipes</h1>
-                <h3 class="text-white icon-large font-weight-100">Galore!</h3>
+                <h1 class="text-white pull-l icon-large font-weight-500 margin-bottom-40px">Easy Bytes</h1>
+                <h3 class="text-white icon-large font-weight-100">Recipe Finder</h3>
             </div>
             <div class="margin-top-45px">
                 <div class="row justify-content-center margin-tb-60px">
