@@ -23,7 +23,7 @@ public class RecipeRepository {
                             "\nServe with soy sauce, Chinese black vinegar, chili sauce, or other dipping sauce of your choice!")),
                     "China", false),
 
-            new Recipe("Sloppy Joe", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
+            new Recipe("SloppyJoe", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
                     new ArrayList<String>(Arrays.asList("1 Tbsp butter", "1 tsp olive oil", "1 lb. ground beef", "1/3 green bell pepper, minced", "1/2 large yellow onion, minced", "3 cloves garlic, minced", "1 Tbsp tomato paste",
                             "2/3 cup ketchup", "1/3 cup water", "1 Tbsp brown sugar", "1 tsp yellow mustard", "3/4 tsp chili powder", "1/2 tsp Worcestershire sauce", "1/2 tsp kosher salt", "1/4 tsp red pepper flakes (optional)", "1/4 tsp black pepper", "dash of hot sauce (optional)")),
                     new ArrayList<String>(Arrays.asList("Heat butter and oil in large skillet over MED/MED-HIGH heat.  Add beef and brown, breaking apart into crumbles as it cooks, about 5 minutes.  Drain.",
@@ -32,7 +32,7 @@ public class RecipeRepository {
                             "\nCook over MED heat for 10-15 minutes, until mixture has thickened to your liking.  Remove from heat and serve over toasted buns.")),
                     "America", true),
 
-            new Recipe("Chicken Shawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
+            new Recipe("ChickenShawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
                     new ArrayList<String>(Arrays.asList("3/4 tbsp ground cumin", "3/4 tbsp turmeric powder", "3/4 tbsp ground coriander", "3/4 tbsp garlic powder", "3/4 tbsp paprika", "1/2 tsp ground cloves", "1/2 tsp cayenne pepper, more if you prefer", "Salt", "8 boneless, skinless chicken thighs",
                             "1 large onion, thinly sliced", "1 large lemon, juice of", "1/3 cup Private Reserve extra virgin olive oil", "6 pita pockets", "Tahini sauce or Greek Tzatziki sauce", "Baby arugula", "3-ingredient Mediterranean Salad", "Pickles or kalmata olives (optional)")),
                     new ArrayList<String>(Arrays.asList("In a small bowl, mix the cumin, turmeric, coriander, garlic powder, sweet paprika and cloves. Set aside the shawarma spice mix for now.",
@@ -44,7 +44,7 @@ public class RecipeRepository {
                             "\nTo serve, open pita pockets up. Spread a little tahini sauce or Tzatziki sauce, add chicken shawarma, arugula, Mediterranean salad and pickles or olives, if you like. Serve immediately!")),
                     "America", true),
 
-            new Recipe("Indian Buffet", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
+            new Recipe("IndianBuffet", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
                     new ArrayList<String>(Arrays.asList("1 lb. boneless chicken breast, cut into 1 ½ inch cubes (see notes)", "2 tablespoons tandoori masala ", "1 teaspoon EACH: ginger paste and garlic paste (I used Gourmet Garden)", "½ cup yogurt", "1 tablespoon oil", "2 tablespoons ghee (clarified butter)", "1 large onion, thinly sliced",
                     "1 ½ teaspoon EACH: ginger paste and garlic paste ", "1 (14.5 ounce) can crushed tomatoes", "1 teaspoon chili powder", "1 1/2 tablespoon coriander powder", "1 1/2 teaspoon cumin powder", "1/2 cup heavy whipping cream", "1/2 teaspoon garam masala", "¼ teaspoon dried fenugreek leaves (crushed between fingers)")),
                     new ArrayList<String>(Arrays.asList("In a medium bowl, combine the tandoori masala, ginger, garlic, and yogurt. Whisk until smooth, adjust seasonings to preference. Add the chicken and allow to marinate for at least 20 minutes and ideally for 12-24 hours, covered in the refrigerator.",
