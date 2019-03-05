@@ -117,56 +117,66 @@
 		<div class="margin-tb-45px full-width">
 			<h4 class="padding-lr-30px padding-tb-20px background-white box-shadow border-radius-10"><i class="far fa-list-alt margin-right-10px text-main-color"></i>Basic Informations</h4>
 			<div class="padding-30px padding-bottom-30px background-white border-radius-10">
-				<form th:action = "@{/submitrecipe}" method = "post">
+				<form th:action = "@{/addrecipe}" th:object = "${newRecipe}" method = "post">
 					<div class="form-group margin-bottom-20px">
 						<label><i class="far fa-list-alt margin-right-10px"></i> Recipe Title</label>
-						<input th:name="recipeName" type="text" class="form-control form-control-sm" id="ListingTitle"  placeholder="Listing Title">
+						<input th:name="recipeName" th:field="*{name}" type="text" class="form-control form-control-sm" id="ListingTitle"  placeholder="Recipe name">
 					</div>
 					<div class="form-group margin-bottom-20px">
-						<div class="row">
-							<div class="col-md-6">
-								<label><i class="far fa-folder-open margin-right-10px"></i> Category</label>
-								<select class="form-control form-control-sm" name="recipeCategory">
-                                    <option>Fish</option>
-                                    <option>Cocktails</option>
-                                    <option>Eggs</option>
-                                    <option>Salads</option>
-                                    <option>Asian</option>
-                                    <option>Pizza</option>
-                                </select>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group margin-bottom-20px">
-									<label><i class="far fa-flag margin-right-10px"></i> Keywords</label>
-									<input type="text" class="form-control form-control-sm" id="ListingKeywords" placeholder="Keywords">
-								</div>
-							</div>
-						</div>
+						<label><i class="far fa-list-alt margin-right-10px"></i> Recipe Tag</label>
+						<input th:name="recipeTag" th:field="*{tag}"  type="text" class="form-control form-control-sm" id="ListingTag"  placeholder="Recipe tag">
 					</div>
-
-
-
-		<div class="margin-bottom-45px full-width">
-			<h4 class="padding-lr-30px padding-tb-20px background-white box-shadow border-radius-10"><i class="far fa-list-alt margin-right-10px text-main-color"></i>Description</h4>
-			<div class="padding-30px padding-bottom-30px background-white border-radius-10">
-				<div class="margin-bottom-20px">
-					<textarea class="form-control" placeholder="Html Tag Enabled" id="exampleTextarea" rows="8"></textarea>
-				</div>
-				<div class="row">
-					<div class="col-md-6 margin-bottom-20px">
-						<label><i class="fas fa-video margin-right-10px"></i> Video URL</label>
-						<input type="text" class="form-control form-control-sm" placeholder="http://www./">
+					<div class="form-group margin-bottom-20px">
+						<label><i class="far fa-list-alt margin-right-10px"></i> Recipe Description</label>
+						<input th:name="recipeDescription" th:field="*{description}" type="text" class="form-control form-control-sm" id="ListingDescription"  placeholder="Recipe description">
 					</div>
-					<div class="col-md-6 margin-bottom-20px">
-						<label><i class="far fa-images margin-right-10px"></i> Image URL</label>
-						<input type="text" class="form-control form-control-sm" placeholder="http://www./">
-					</div>
-				</div>
-			</div>
-		</div>
-		<a href="#" type="submit" class="btn btn-lg border-2  ba-1 text-white margin-bottom-80px btn-block border-radius-15 padding-15px box-shadow">Add Recipe</a>
+					<button type="submit">Submit Recipe</button>
 
 				</form>
+					<!--<div class="form-group margin-bottom-20px">-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-6">-->
+								<!--<label><i class="far fa-folder-open margin-right-10px"></i> Category</label>-->
+								<!--<select class="form-control form-control-sm" name="recipeCategory">-->
+                                    <!--<option>Fish</option>-->
+                                    <!--<option>Cocktails</option>-->
+                                    <!--<option>Eggs</option>-->
+                                    <!--<option>Salads</option>-->
+                                    <!--<option>Asian</option>-->
+                                    <!--<option>Pizza</option>-->
+                                <!--</select>-->
+							<!--</div>-->
+							<!--<div class="col-md-6">-->
+								<!--<div class="form-group margin-bottom-20px">-->
+									<!--<label><i class="far fa-flag margin-right-10px"></i> Keywords</label>-->
+									<!--<input type="text" class="form-control form-control-sm" id="ListingKeywords" placeholder="Keywords">-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+
+
+
+		<!--<div class="margin-bottom-45px full-width">-->
+			<!--<h4 class="padding-lr-30px padding-tb-20px background-white box-shadow border-radius-10"><i class="far fa-list-alt margin-right-10px text-main-color"></i>Description</h4>-->
+			<!--<div class="padding-30px padding-bottom-30px background-white border-radius-10">-->
+				<!--<div class="margin-bottom-20px">-->
+					<!--<textarea class="form-control" placeholder="Html Tag Enabled" id="exampleTextarea" rows="8"></textarea>-->
+				<!--</div>-->
+				<!--<div class="row">-->
+					<!--<div class="col-md-6 margin-bottom-20px">-->
+						<!--<label><i class="fas fa-video margin-right-10px"></i> Video URL</label>-->
+						<!--<input type="text" class="form-control form-control-sm" placeholder="http://www./">-->
+					<!--</div>-->
+					<!--<div class="col-md-6 margin-bottom-20px">-->
+						<!--<label><i class="far fa-images margin-right-10px"></i> Image URL</label>-->
+						<!--<input type="text" class="form-control form-control-sm" placeholder="http://www./">-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<a href="#" type="submit" class="btn btn-lg border-2  ba-1 text-white margin-bottom-80px btn-block border-radius-15 padding-15px box-shadow">Add Recipe</a>-->
+
 			</div>
 		</div>
 
