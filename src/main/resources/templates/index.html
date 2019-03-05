@@ -185,7 +185,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px" th:each="recipe : ${allRecipes}">
                 <div class="card border-0 box-shadow">
                     <div class="card-img-top">
-                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
+                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img th:src="@{'/images/' + ${recipe.pictureName} + '.jpg'}" alt="jpg"></a>
                     </div>
                     <div class="padding-lr-30px padding-tb-20px">
                         <h5 class="margin-bottom-20px margin-top-10px">
