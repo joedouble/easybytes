@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import java.util.List;
+
 @Controller
 public class RecipeController {
 
@@ -58,7 +60,9 @@ public class RecipeController {
     }
 
     @RequestMapping("/search")
-    public String recipeSearch(){
+    public String recipeSearch(@RequestParam(name = "q") String searchValue, ModelMap modelMap){
+        List<Recipe> searchResults = recipeRepository.searchForRecipe(searchValue);
+        modelMap.put("searchResults", searchResults);
         return "search";
     }
 
