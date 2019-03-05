@@ -12,7 +12,7 @@ public class RecipeRepository {
 
 
     private static final List<Recipe> ALL_RECIPES = Arrays.asList(
-            new Recipe("dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
+            new Recipe("Dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
                     new ArrayList<String>(Arrays.asList("3 lbs green leafy vegetable", " 1 ½ pounds ground pork", " 2/3 cup shaoxing wine", "½ cup oil", "3 tablespoons sesame oil", "1 tablespoon salt", "3 tablespoons soy sauce", "¼ teaspoon white pepper", "2/3 cup water, plus more for assembly", "3-4 packages dumpling wrappers")),
                     new ArrayList<String>(Arrays.asList("Wash your vegetables thoroughly and blanch them in a pot of boiling water. Transfer them to an ice bath to cool. Ring out all the water from the vegetables and chop very finely.",
                             "\nIn a large bowl, stir together the vegetable, meat, wine, oil, sesame oil, salt, soy sauce, white pepper, and ⅔ cup water. Mix for 6-8 minutes, until very well-combined.",
@@ -59,6 +59,15 @@ public class RecipeRepository {
 
     public List<Recipe> getAllRecipes() {
         return ALL_RECIPES;
+    }
+
+    public Recipe findByName(String name) {
+        for (Recipe recipe : ALL_RECIPES) {
+            if (recipe.getName().equalsIgnoreCase(name)){
+                return recipe;
+            }
+        }
+        return null;
     }
 
 }
