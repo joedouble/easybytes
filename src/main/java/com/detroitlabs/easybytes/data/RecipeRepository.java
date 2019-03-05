@@ -12,28 +12,7 @@ public class RecipeRepository {
 
 
     private static final List<Recipe> ALL_RECIPES = Arrays.asList(
-<<<<<<< Updated upstream
-            new Recipe("Sloppy Joe", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "sloppy")),
-                    new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "sloppy")),
-                            new ArrayList<String>(Arrays.asList("Very Good shit", "This is a sloppy joe and a sentence")),
-                                    "America", false),
 
-            new Recipe("Dumplings", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
-                    new ArrayList<String>(Arrays.asList("chicken", "flour", "broth", "peas")),
-                    new ArrayList<String>(Arrays.asList("These come from the land of china", "These are dumplings and a sentence")),
-                    "China", true),
-
-            new Recipe("Chicken Shawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
-                    new ArrayList<String>(Arrays.asList("Chicken", "Pita", "garlic", "shawarma juice")),
-                    new ArrayList<String>(Arrays.asList("The best meal ever", "This is a shawarma and a sentence")),
-                    "America", true),
-
-            new Recipe("Indian Buffet", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
-                    new ArrayList<String>(Arrays.asList("chicken", "spice", "potatoes", "sloppy")),
-                    new ArrayList<String>(Arrays.asList("Brians favorite food", "This is a Indian Buffet and a sentence")),
-                    "America", false)
-            );
-=======
             new Recipe("dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
                     new ArrayList<String>(Arrays.asList("3 lbs green leafy vegetable", " 1 ½ pounds ground pork", " 2/3 cup shaoxing wine", "½ cup oil", "3 tablespoons sesame oil", "1 tablespoon salt", "3 tablespoons soy sauce", "¼ teaspoon white pepper", "2/3 cup water, plus more for assembly", "3-4 packages dumpling wrappers")),
                     new ArrayList<String>(Arrays.asList("Wash your vegetables thoroughly and blanch them in a pot of boiling water. Transfer them to an ice bath to cool. Ring out all the water from the vegetables and chop very finely.",
@@ -168,8 +147,6 @@ public class RecipeRepository {
 
 
     );
->>>>>>> Stashed changes
-
 
     public List<Recipe> getAllRecipes() {
         return ALL_RECIPES;
