@@ -182,4 +182,13 @@ public class RecipeRepository {
         return serchRecipe;
     }
 
+    public Recipe findByName(String name) {
+        for (Recipe recipe : ALL_RECIPES) {
+            if (recipe.getName().equalsIgnoreCase(name)){
+                return recipe;
+            }
+        }
+        return null;
+    }
+
 }
