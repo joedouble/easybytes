@@ -2,6 +2,7 @@ package com.detroitlabs.easybytes.data;
 
 import com.detroitlabs.easybytes.model.Recipe;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -154,13 +155,24 @@ public class RecipeRepository {
 
 
     public List<Recipe>searchForRecipe(String search){
-        List<Recipe>serchRecipe = new ArrayList<>();
+        List<Recipe>searchRecipe = new ArrayList<>();
         for(Recipe recipe : ALL_RECIPES){
-            if(search.equalsIgnoreCase(recipe.getName())){
-                serchRecipe.add(recipe);
+            if(search.equalsIgnoreCase(recipe.getName()) || search.equalsIgnoreCase(recipe.getRegion()) || recipe.getTags().contains(search) || recipe.getIngredients().contains(search)){
+                searchRecipe.add(recipe);
             }
         }
-        return serchRecipe;
+        return searchRecipe;
     }
+
+    public Recipe findByName(@PathVariable String name) {
+        for (Recipe recipe : ALL_RECIPES) {
+            if (recipe.getName().equals(name)) {
+                return recipe;
+            }
+        }
+        return null;
+    }
+
+
 
 }
