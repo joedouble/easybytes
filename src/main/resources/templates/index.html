@@ -53,10 +53,10 @@
                             class="white-link dropdown-dark text-lg-center nav-menu link-padding-tb-17px">
                             <li><a th:href="@{/}">Home</a></li>
                             <li><a href="#">Recipes</a></li>
-                            <li><a href="page-about.html">About Us </a></li>
+                            <li><a th:href="@{/aboutus}">About Us </a></li>
                             <li><a th:href="@{/addrecipe}">Add Recipe</a></li>
-                            <li><a href="page-login.html">Login Page</a></li>
-                            <li><a href="search-page.html">Search Page</a></li>
+                            <!--<li><a href="login.html">Login Page</a></li>-->
+                            <li><a th:href="@{/search}">Search Page</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-12">
@@ -64,7 +64,7 @@
                         <a href="addrecipe.html"
                            class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i
                                 class="fas fa-plus"></i></a>
-                        <a href="page-login.html"
+                        <a href="login.html"
                            class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i
                                 class="far fa-user"></i></a>
                     </div>
@@ -135,36 +135,36 @@
                     <h4 class="text-center padding-15px">Fish</h4>
                 </a>
             </div>
-            <!--<div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">-->
-            <!--<a href="#" class="d-block box-shadow background-main-color text-white hvr-float">-->
-            <!--<div class="thum"><img src="assets/img/cat-2.jpg" alt=""></div>-->
-            <!--<h4 class="text-center padding-15px">Cocktails</h4>-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">-->
-            <!--<a href="#" class="d-block box-shadow background-main-color text-white hvr-float">-->
-            <!--<div class="thum"><img src="assets/img/cat-3.jpg" alt=""></div>-->
-            <!--<h4 class="text-center padding-15px">Eggs</h4>-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">-->
-            <!--<a href="#" class="d-block box-shadow background-main-color text-white hvr-float">-->
-            <!--<div class="thum"><img src="assets/img/cat-4.jpg" alt=""></div>-->
-            <!--<h4 class="text-center padding-15px">Salads</h4>-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">-->
-            <!--<a href="#" class="d-block box-shadow background-main-color text-white hvr-float">-->
-            <!--<div class="thum"><img src="assets/img/cat-5.jpg" alt=""></div>-->
-            <!--<h4 class="text-center padding-15px">Asian</h4>-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">-->
-            <!--<a href="#" class="d-block box-shadow background-main-color text-white hvr-float">-->
-            <!--<div class="thum"><img src="assets/img/cat-6.jpg" alt=""></div>-->
-            <!--<h4 class="text-center padding-15px">Pizza</h4>-->
-            <!--</a>-->
-            <!--</div>-->
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+            <div class="thum"><img src="assets/img/cat-2.jpg" alt=""></div>
+            <h4 class="text-center padding-15px">Cocktails</h4>
+            </a>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+            <div class="thum"><img src="assets/img/cat-3.jpg" alt=""></div>
+            <h4 class="text-center padding-15px">Eggs</h4>
+            </a>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+            <div class="thum"><img src="assets/img/cat-4.jpg" alt=""></div>
+            <h4 class="text-center padding-15px">Salads</h4>
+            </a>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+            <div class="thum"><img src="assets/img/cat-5.jpg" alt=""></div>
+            <h4 class="text-center padding-15px">Asian</h4>
+            </a>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+            <div class="thum"><img src="assets/img/cat-6.jpg" alt=""></div>
+            <h4 class="text-center padding-15px">Pizza</h4>
+            </a>
+            </div>
         </div>
     </div>
 </div>
@@ -187,7 +187,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px" th:each="recipe : ${allRecipes}">
                 <div class="card border-0 box-shadow">
                     <div class="card-img-top">
-                        <a href="#"><img th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
+                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
                     </div>
                     <div class="padding-lr-30px padding-tb-20px">
                         <h5 class="margin-bottom-20px margin-top-10px">
@@ -569,17 +569,7 @@
     </div>
 </div>
 
-<div class="padding-tb-10px background-main-color">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="text-white margin-tb-15px text-center text-lg-left">
-                    Cook Note | @2018 All copy rights reserved
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="padding-tb-10px background-main-color"></div>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 <script src="assets/js/sticky-sidebar.js"></script>
