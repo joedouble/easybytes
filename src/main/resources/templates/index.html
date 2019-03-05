@@ -189,7 +189,7 @@
                     </div>
                     <div class="padding-lr-30px padding-tb-20px">
                         <h5 class="margin-bottom-20px margin-top-10px">
-                            <a class="text-dark" href="#" th:text="${recipe.name}">Recipe Name</a>
+                            <a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}" th:text="${recipe.name}">Recipe Name</a>
                         </h5>
                         <hr>
                         <div class="row no-gutters">
