@@ -21,39 +21,42 @@ public class RecipeRepositoryTest {
 
     testRecipe = new Recipe("test recipe", new ArrayList<String>(Arrays.asList("test tags")),
               new ArrayList<String>(Arrays.asList("test ingredients")),
-            new ArrayList<String>(Arrays.asList("test description")), "test region", true);
-
-    }
-
-
-    @Test
-    public void addRecipe() {
-        int expectedSizeAfterAddingRecipe = 5;
-
-        List<Recipe> actualRepositoryRecipeList = testRepository.getAllRecipes();
-
-        assertEquals(4, actualRepositoryRecipeList.size());
-
-        testRepository.addRecipe(testRecipe);
-
-        assertEquals(expectedSizeAfterAddingRecipe, testRepository.getAllRecipes().size());
-
-        String actualNameOfAddedRecipe = testRepository.getAllRecipes().get(4).getName();
-
-        assertEquals("test recipe", actualNameOfAddedRecipe);
+            new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
 
     }
 
    @Test
     public void getAllRecipes() {
 
-        int expectedSize = 4;
+        int expectedSize = 11;
 
        List<Recipe> actualRepositoryRecipeList = testRepository.getAllRecipes();
 
-       assertEquals(4, actualRepositoryRecipeList.size());
+       assertEquals(expectedSize, actualRepositoryRecipeList.size());
 
     }
 
+    @Test
+    public void addRecipe() {
+        int expectedinitialNumberOfRecipes = 11;
+        int expectedNumberOfRecipesAfterAddingRecipe = 12;
+
+        List<Recipe> actualRepositoryRecipeList = testRepository.getAllRecipes();
+
+        assertEquals(expectedinitialNumberOfRecipes, actualRepositoryRecipeList.size());
+
+        testRepository.addRecipe(testRecipe);
+
+        assertEquals(expectedNumberOfRecipesAfterAddingRecipe, testRepository.getAllRecipes().size());
+
+       List<Recipe> actualRecipes = testRepository.getAllRecipes();
+        String actualNameOfAddedRecipe = actualRecipes.get(actualRecipes.size() - 1).getName();
+
+        assertEquals("test recipe", actualNameOfAddedRecipe);
+
+    }
+
+    @Test
+    public void
 
 }
