@@ -46,5 +46,11 @@ public class RecipeController {
         modelMap.put("singleRecipe", singleRecipe);
         return "singlerecipe";
     }
+    @RequestMapping("/singlerecipe/{region}")
+    public String regionRecipe(@PathVariable String region, ModelMap modelMap){
+        Recipe recipeRegion = recipeRepository.findbyRegion(region);
+        modelMap.put("recipeRegion", recipeRegion);
+        return "singlerecipe";
+    }
 
 }

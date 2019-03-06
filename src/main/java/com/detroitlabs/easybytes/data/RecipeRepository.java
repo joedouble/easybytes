@@ -164,11 +164,20 @@ public class RecipeRepository {
         return searchRecipe;
     }
 
-    public Recipe findByName(@PathVariable String name) {
+    public Recipe findByName(String name) {
         for (Recipe recipe : ALL_RECIPES) {
             if (recipe.getName().equals(name)) {
                 return recipe;
             }
+        }
+        return null;
+    }
+
+    public Recipe findbyRegion(String region){
+        for(Recipe recipe : ALL_RECIPES) {
+       if(recipe.getRegion().equalsIgnoreCase(region)){
+           return recipe;
+       }
         }
         return null;
     }
