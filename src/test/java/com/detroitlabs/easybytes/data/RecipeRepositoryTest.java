@@ -106,4 +106,32 @@ public class RecipeRepositoryTest {
         assertEquals("test recipe", nameOfThirdActualIndex);
     }
 
+    @Test
+    public void shouldReturnEmptyListIfStringNotFoundInSearch(){
+        String testSearch = "butter";
+
+        List<Recipe> testRecipes = new ArrayList<>(Arrays.asList(testRecipeOne, testRecipeTwo, testRecipeThree));
+
+        testRecipeRepository.setAllRecipes(testRecipes);
+
+        List<Recipe> actualSearchResults = testRecipeRepository.searchForRecipe(testSearch);
+
+        assertEquals(0, actualSearchResults.size());
+    }
+
+    @Test
+    public void shouldReturnOneRecipeIfExactNameMatch(){
+        String testSearch = "test recipe";
+
+        List<Recipe> testRecipes = new ArrayList<>(Arrays.asList(testRecipeOne, testRecipeTwo, testRecipeThree));
+
+        testRecipeRepository.setAllRecipes(testRecipes);
+
+        List<Recipe> actualSearchResults = testRecipeRepository.searchForRecipe(testSearch);
+
+        assertEquals(1, actualSearchResults.size());
+
+        assertEquals("test recipe", actualSearchResults.get(0).getName());
+    }
+
 }
