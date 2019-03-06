@@ -23,16 +23,16 @@ public class RecipeRepositoryTest {
 
     testRecipeOne = new Recipe("test recipe", new ArrayList<String>(Arrays.asList("test tags")),
               new ArrayList<String>(Arrays.asList("lard")),
-            new ArrayList<String>(Arrays.asList("test description")), "China", true, false);
+            new ArrayList<String>(Arrays.asList("test description")), "China", true, false, "brian");
 
 
         testRecipeTwo = new Recipe("B test recipe", new ArrayList<String>(Arrays.asList("bread")),
                 new ArrayList<String>(Arrays.asList("test ingredients")),
-                new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
+                new ArrayList<String>(Arrays.asList("test description")), "test region", true, false, "lisa");
 
         testRecipeThree = new Recipe("A test recipe", new ArrayList<String>(Arrays.asList("bread")),
                 new ArrayList<String>(Arrays.asList("lard")),
-                new ArrayList<String>(Arrays.asList("test description")), "china", true, false);
+                new ArrayList<String>(Arrays.asList("test description")), "china", true, false, "oglethorpe");
 
     }
 
