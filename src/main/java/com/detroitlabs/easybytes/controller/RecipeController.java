@@ -74,7 +74,7 @@ public class RecipeController {
 
     @RequestMapping("/allrecipes")
     public String allRecipes(ModelMap modelMap){
-        modelMap.put("allRecipes", recipeRepository.getAllRecipes());
+        modelMap.put("allRecipes", recipeRepository.showAllRecipesAlpha());
         return "allrecipes";
     }
 
