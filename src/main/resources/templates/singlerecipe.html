@@ -101,7 +101,7 @@
                     </ol>
                     <hr>
                     <div class="row no-gutters">
-                        <div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>
+                        <div class="col-4 text-left text-red"><i th:class="(${singleRecipe.favorite} ? 'far' : 'fas') + ' fa-heart'"></i> Save</div>
                         </div>
                     </div>
                 </div>
@@ -124,8 +124,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <a class="listing-bottom border-radius-10 background-second-color box-shadow" href="#">Search
-                            Now</a>
+                        <input type="submit" class="listing-bottom border-radius-10 background-second-color box-shadow">
                     </div>
                 </form>
             </div>

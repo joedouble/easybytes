@@ -116,7 +116,7 @@ public class RecipeRepository {
                             "\nDivide chilled dough into 1-ounce pieces and form into 2-inch diameter balls. Roll each piece into a 4 1/2-inch circle. Lay circles on a baking sheet lightly dusted with flour.",
                             "\nMoisten outer edge of each round with water. Put about 2 tablespoons filling in the center of each round, adding a little chopped green olive and some hard-cooked egg to each. Wrap dough around filling to form empanada, pressing edges together. Fold edge back and finish by pinching little pleats or crimping with a fork.",
                             "\nHeat oven to 375 degrees. Place empanadas on parchment-lined or oiled baking sheet, about 1 inch apart. Brush tops lightly with lard or butter and bake on top shelf of oven until golden, 10 to 15 minutes. Serve warm.")),
-                    "Mexico", true, false),
+                    "Mexico", false, false),
 
 
             new Recipe("Bacalau", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -141,7 +141,7 @@ public class RecipeRepository {
                             "\nIf using a regular bowl, divide the rice evenly between the two bowls and then place small mounds of the beef, mushrooms, carrots, zucchini, spinach and bean sprouts on top of the rice. Top with toasted sesame seeds.",
                             "\nCook the egg sunny side up on a lightly oil skillet and place on top of the beef and vegetables.",
                             "\nServe with Gochujang.")),
-                    "Korea", true, false)
+                    "Korea", false, false)
 
 
     ));
