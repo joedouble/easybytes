@@ -57,15 +57,7 @@
                             <li><a th:href="@{/search}">Search Page</a></li>
                         </ul>
                     </div>
-                    <!--<div class="col-lg-2 col-md-12">-->
-                    <!--<hr class="margin-bottom-0px d-block d-sm-none">-->
-                    <!--<a href="addrecipe.html"-->
-                    <!--class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                    <!--class="fas fa-plus"></i></a>-->
-                    <!--<a href="login.html"-->
-                    <!--class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                    <!--class="far fa-user"></i></a>-->
-                    <!--</div>-->
+
                 </div>
 
             </div>
@@ -90,7 +82,8 @@
 
         <div class="col-lg-8">
             <div class="margin-bottom-40px card border-0 box-shadow">
-                <div class="card-img-top"><img th:src="@{'/images/' + ${singleRecipe.name} + '.jpg'}" alt="jpg"></div>
+                <div class="card-img-top"><img th:src="@{'/images/' + ${singleRecipe.pictureName} + '.jpg'}" alt="jpg">
+                </div>
                 <div class="padding-lr-30px padding-tb-20px">
                     <h5 class="margin-bottom-20px margin-top-10px text-dark" th:text="${singleRecipe.name}">Recipe
                         Name</h5>
@@ -124,28 +117,11 @@
 
         <div class="col-lg-4">
             <div class="listing-search box-shadow background-main-color padding-30px margin-bottom-30px">
-                <form class="row no-gutters">
+                <form th:action="@{/search}" method="get" class="row no-gutters">
                     <div class="col-md-12">
                         <div class="keywords">
-                            <input class="listing-form first border-radius-10 margin-bottom-10px" type="text"
+                            <input th:name="q" class="listing-form first border-radius-10 margin-bottom-10px" type="text"
                                    placeholder="Keywords..." value="">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="categories dropdown">
-                            <a class="listing-form d-block text-nowrap border-radius-10 margin-bottom-10px"
-                               id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All
-                                Categories</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item text-up-small" type="button">Fish</button>
-                                <button class="dropdown-item text-up-small" type="button">Cocktails</button>
-                                <button class="dropdown-item text-up-small" type="button">Salads</button>
-                                <button class="dropdown-item text-up-small" type="button">Asian</button>
-                                <button class="dropdown-item text-up-small" type="button">Fish</button>
-                                <button class="dropdown-item text-up-small" type="button">Cocktails</button>
-                                <button class="dropdown-item text-up-small" type="button">Salads</button>
-                                <button class="dropdown-item text-up-small" type="button">Asian</button>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -160,25 +136,26 @@
     </div>
 </div>
 
+
 <div class="instgram-feed">
     <div class="row no-gutters">
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-1.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-1.jpg}" alt></a>
         </div>
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-2.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-2.jpg}" alt></a>
         </div>
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-3.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-3.jpg}" alt></a>
         </div>
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-4.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-4.jpg}" alt></a>
         </div>
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-5.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-5.jpg}" alt></a>
         </div>
         <div class="col-md-2 col-6">
-            <a href="#"><img src="assets/img/instgram-6.jpg" alt></a>
+            <a href="#"><img th:src="@{/assets/img/instgram-6.jpg}" alt></a>
         </div>
     </div>
 </div>

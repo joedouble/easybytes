@@ -50,22 +50,14 @@
                         <ul id="menu-main"
                             class="white-link dropdown-dark text-lg-center nav-menu link-padding-tb-17px">
                             <li><a th:href="@{/}">Home</a></li>
-                            <li><a href="#">Recipes</a></li>
+                            <li><a th:href="@{/allrecipes}">Recipes</a></li>
                             <li><a th:href="@{/aboutus}">About Us </a></li>
                             <li><a th:href="@{/addrecipe}">Add Recipe</a></li>
                             <!--<li><a href="login.html">Login Page</a></li>-->
                             <li><a th:href="@{/search}">Search Page</a></li>
                         </ul>
                     </div>
-                    <!--<div class="col-lg-2 col-md-12">-->
-                        <!--<hr class="margin-bottom-0px d-block d-sm-none">-->
-                        <!--<a href="addrecipe.html"-->
-                           <!--class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                                <!--class="fas fa-plus"></i></a>-->
-                        <!--<a href="login.html"-->
-                           <!--class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                                <!--class="far fa-user"></i></a>-->
-                    <!--</div>-->
+
                 </div>
 
             </div>
@@ -74,7 +66,8 @@
 </header>
 <!-- // Header  -->
 
-<div class="banner padding-tb-20px background-overlay" th:style="'background-image: url(' + @{/assets/img/banner_1.jpg} + ');'">
+<div class="banner padding-tb-20px background-overlay"
+     th:style="'background-image: url(' + @{/assets/img/banner_1.jpg} + ');'">
     <div class="container">
 
         <div class="padding-tb-120px z-index-2 position-relative">
@@ -86,10 +79,11 @@
                 <div class="row justify-content-center margin-tb-60px">
                     <div class="col-lg-8">
                         <div class="listing-search">
-                            <form class="row no-gutters">
+                            <form th:action="@{/search}" method="get" class="row no-gutters">
                                 <div class="col-md-4">
                                     <div class="keywords">
-                                        <input class="listing-form first" type="text" placeholder="Keywords..."
+                                        <input th:name="q" class="listing-form first" type="text"
+                                               placeholder="Keywords..."
                                                value="">
                                     </div>
                                 </div>
@@ -134,34 +128,34 @@
                 </a>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="assets/img/cat-2.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Cocktails</h4>
-            </a>
+                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+                    <div class="thum"><img src="assets/img/cat-2.jpg" alt=""></div>
+                    <h4 class="text-center padding-15px">Cocktails</h4>
+                </a>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="assets/img/cat-3.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Eggs</h4>
-            </a>
+                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+                    <div class="thum"><img src="assets/img/cat-3.jpg" alt=""></div>
+                    <h4 class="text-center padding-15px">Eggs</h4>
+                </a>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="assets/img/cat-4.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Salads</h4>
-            </a>
+                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+                    <div class="thum"><img src="assets/img/cat-4.jpg" alt=""></div>
+                    <h4 class="text-center padding-15px">Salads</h4>
+                </a>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="assets/img/cat-5.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Asian</h4>
-            </a>
+                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+                    <div class="thum"><img src="assets/img/cat-5.jpg" alt=""></div>
+                    <h4 class="text-center padding-15px">Asian</h4>
+                </a>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="assets/img/cat-6.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Pizza</h4>
-            </a>
+                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
+                    <div class="thum"><img src="assets/img/cat-6.jpg" alt=""></div>
+                    <h4 class="text-center padding-15px">Pizza</h4>
+                </a>
             </div>
         </div>
     </div>
@@ -185,11 +179,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px" th:each="recipe : ${allRecipes}">
                 <div class="card border-0 box-shadow">
                     <div class="card-img-top">
-                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
+                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img
+                                th:src="@{'/images/' + ${recipe.pictureName} + '.jpg'}" alt="jpg"></a>
                     </div>
                     <div class="padding-lr-30px padding-tb-20px">
                         <h5 class="margin-bottom-20px margin-top-10px">
-                            <a class="text-dark" href="#" th:text="${recipe.name}">Recipe Name</a>
+                            <a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}"
+                               th:text="${recipe.name}">Recipe Name</a>
                         </h5>
                         <hr>
                         <div class="row no-gutters">
@@ -205,246 +201,6 @@
                     </div>
                 </div>
             </div>
-            <!-- // Recipe Item -->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img th:src="@{/assets/img/recipes-big-1.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--th:src="@{assets/img/zoal-2.jpg}" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img th:src="@{/assets/img/recipes-2.jpg}" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-3.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img src="assets/img/recipes-big-2.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-4.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img src="assets/img/recipes-3.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-1.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img src="assets/img/recipes-4.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-1.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img src="assets/img/recipes-5.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-7.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
-
-            <!--&lt;!&ndash; Recipe Item &ndash;&gt;-->
-            <!--<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px">-->
-            <!--<div class="card border-0 box-shadow">-->
-            <!--<div class="card-img-top"><a href="#"><img src="assets/img/recipes-6.jpg" alt=""></a></div>-->
-            <!--<div class="padding-lr-30px padding-tb-20px">-->
-            <!--<h5 class="margin-bottom-20px margin-top-10px"><a class="text-dark" href="#">Slow Cooker Loaded-->
-            <!--Potato Soup</a></h5>-->
-            <!--<div class="rating">-->
-            <!--<ul>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li class="active"></li>-->
-            <!--<li></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="row no-gutters">-->
-            <!--<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>-->
-            <!--</div>-->
-            <!--<div class="col-8 text-right"><a href="#" class="text-grey-2"><i class="fas fa-users"></i>-->
-            <!--6-8 servings</a></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">-->
-            <!--<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img-->
-            <!--src="assets/img/zoal-8.jpg" class="height-30px border-radius-30 margin-right-15px"-->
-            <!--alt=""> Salim Aldosery</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; // Recipe Item &ndash;&gt;-->
-
 
         </div>
         <div class="text-center">
@@ -457,92 +213,6 @@
     </div>
     <!-- // container -->
 </section>
-
-
-<!--<section class="padding-tb-100px background-white">-->
-<!--<div class="container">-->
-
-<!--<div class="title text-center">-->
-<!--<h2 class="font-weight-700 text-main-color"> Top Authors</h2>-->
-<!--<div class="row justify-content-center margin-bottom-45px">-->
-<!--<div class="col-md-7">-->
-<!--<p class="text-grey-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.-->
-<!--Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-1.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">Ali haleem</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-2.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">Salim Aldosery</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-3.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">Rabie Khair</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-4.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">Momen Alsho</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-5.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">M.Salman ali</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="col-lg-2 col-md-3 text-center">-->
-<!--<div class="hvr-float">-->
-<!--<div class="thum"><a href="#"><img class="border-radius-8 box-shadow" src="assets/img/authors-6.jpg"-->
-<!--alt=""></a></div>-->
-<!--<a class="h4 d-block margin-top-20px" href="#">Khalid Ziaad</a>-->
-<!--<small class="text-grey-2">(145 Recipes)</small>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-
-<!--<div class="text-center">-->
-<!--<a href="#"-->
-<!--class="btn box-shadow margin-top-50px padding-tb-10px btn-sm border-2 border-radius-30 btn-inline-block width-210px background-dark text-white">Show-->
-<!--All Authors</a>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</section>-->
 
 <div class="instgram-feed">
     <div class="row no-gutters">

@@ -2,6 +2,7 @@ package com.detroitlabs.easybytes.data;
 
 import com.detroitlabs.easybytes.model.Recipe;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ public class RecipeRepository {
 
 
     private static List<Recipe> ALL_RECIPES = new ArrayList<>(Arrays.asList(
-            new Recipe("dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
+            new Recipe("Dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
                     new ArrayList<String>(Arrays.asList("3 lbs green leafy vegetable", " 1 ½ pounds ground pork", " 2/3 cup shaoxing wine", "½ cup oil", "3 tablespoons sesame oil", "1 tablespoon salt", "3 tablespoons soy sauce", "¼ teaspoon white pepper", "2/3 cup water, plus more for assembly", "3-4 packages dumpling wrappers")),
                     new ArrayList<String>(Arrays.asList("Wash your vegetables thoroughly and blanch them in a pot of boiling water. Transfer them to an ice bath to cool. Ring out all the water from the vegetables and chop very finely.",
                             "\nIn a large bowl, stir together the vegetable, meat, wine, oil, sesame oil, salt, soy sauce, white pepper, and ⅔ cup water. Mix for 6-8 minutes, until very well-combined.",
@@ -24,7 +25,7 @@ public class RecipeRepository {
                     "China", false, false),
 
 
-            new Recipe("SloppyJoe", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
+            new Recipe("Sloppy Joe", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
                     new ArrayList<String>(Arrays.asList("1 Tbsp butter", "1 tsp olive oil", "1 lb. ground beef", "1/3 green bell pepper, minced", "1/2 large yellow onion, minced", "3 cloves garlic, minced", "1 Tbsp tomato paste",
                             "2/3 cup ketchup", "1/3 cup water", "1 Tbsp brown sugar", "1 tsp yellow mustard", "3/4 tsp chili powder", "1/2 tsp Worcestershire sauce", "1/2 tsp kosher salt", "1/4 tsp red pepper flakes (optional)", "1/4 tsp black pepper", "dash of hot sauce (optional)")),
                     new ArrayList<String>(Arrays.asList("Heat butter and oil in large skillet over MED/MED-HIGH heat.  Add beef and brown, breaking apart into crumbles as it cooks, about 5 minutes.  Drain.",
@@ -34,7 +35,7 @@ public class RecipeRepository {
                     "America", true, false),
 
 
-            new Recipe("ChickenShawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
+            new Recipe("Chicken Shawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
                     new ArrayList<String>(Arrays.asList("3/4 tbsp ground cumin", "3/4 tbsp turmeric powder", "3/4 tbsp ground coriander", "3/4 tbsp garlic powder", "3/4 tbsp paprika", "1/2 tsp ground cloves", "1/2 tsp cayenne pepper, more if you prefer", "Salt", "8 boneless, skinless chicken thighs",
                             "1 large onion, thinly sliced", "1 large lemon, juice of", "1/3 cup Private Reserve extra virgin olive oil", "6 pita pockets", "Tahini sauce or Greek Tzatziki sauce", "Baby arugula", "3-ingredient Mediterranean Salad", "Pickles or kalmata olives (optional)")),
                     new ArrayList<String>(Arrays.asList("In a small bowl, mix the cumin, turmeric, coriander, garlic powder, sweet paprika and cloves. Set aside the shawarma spice mix for now.",
@@ -47,7 +48,7 @@ public class RecipeRepository {
                     "Mediterranean", true, false),
 
 
-            new Recipe("MurghMakhan", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
+            new Recipe("Murgh Makhani", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
                     new ArrayList<String>(Arrays.asList("1 lb. boneless chicken breast, cut into 1 ½ inch cubes (see notes)", "2 tablespoons tandoori masala ", "1 teaspoon EACH: ginger paste and garlic paste (I used Gourmet Garden)", "½ cup yogurt", "1 tablespoon oil", "2 tablespoons ghee (clarified butter)", "1 large onion, thinly sliced",
                             "1 ½ teaspoon EACH: ginger paste and garlic paste ", "1 (14.5 ounce) can crushed tomatoes", "1 teaspoon chili powder", "1 1/2 tablespoon coriander powder", "1 1/2 teaspoon cumin powder", "1/2 cup heavy whipping cream", "1/2 teaspoon garam masala", "¼ teaspoon dried fenugreek leaves (crushed between fingers)")),
                     new ArrayList<String>(Arrays.asList("In a medium bowl, combine the tandoori masala, ginger, garlic, and yogurt. Whisk until smooth, adjust seasonings to preference. Add the chicken and allow to marinate for at least 20 minutes and ideally for 12-24 hours, covered in the refrigerator.",
@@ -93,7 +94,7 @@ public class RecipeRepository {
                     "Spain", true, false),
 
 
-            new Recipe("PadThai", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
+            new Recipe("Pad Thai", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
                     new ArrayList<String>(Arrays.asList("8 ounces flat rice noodles", "3 Tablespoons oil", "3 cloves garlic , minced", "8 ounces uncooked shrimp, chicken, or extra-firm tofu , cut into small pieces", "2 eggs", "1 cup fresh bean sprouts", "1 red bell pepper , thinly sliced", "3 green onions , chopped", "1/2 cup dry roasted peanuts", "2 limes", "1/2 cup Fresh cilantro , chopped",
                             "3 Tablespoons fish sauce", "1 Tablespoon low-sodium soy sauce", "5 Tablespoons light brown sugar", "2 Tablespoons rice vinegar * see note", "1 Tablespoon Sriracha hot sauce , or more, to taste", "2 Tablespoons creamy peanut butter , optional")),
                     new ArrayList<String>(Arrays.asList("Cook noodles according to package instructions, just until tender.  Rinse under cold water.",
@@ -106,7 +107,7 @@ public class RecipeRepository {
                     "Thailand", true, false),
 
 
-            new Recipe("BeefEmpanadas", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
+            new Recipe("Beef Empanadas", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
                     new ArrayList<String>(Arrays.asList("4  ounces lard or butter, plus more for brushing tops", "1 ½  teaspoons fine sea salt", "750  grams all-purpose flour, about 6 cups, more as needed", "1  pound beef chuck, in 1/8-inch dice (or very coarsely ground)", "Salt and pepper", "Lard or olive oil, or a combination, for sautéing", "1  cup diced onion", "2  ounces diced chorizo", "2  hard-cooked eggs, sliced",
                             "½  pound potatoes, peeled and diced", "4  garlic cloves, mashed to a paste", "2  teaspoons chopped thyme", "2  teaspoons chopped marjoram or 1 teaspoon oregano", "1  tablespoon tomato paste", "1  tablespoon pimentón dulce or paprika", "Large pinch cayenne", "Beef or chicken broth, as necessary, or use water", "½  cup chopped scallions, white and green parts", "¼  cup chopped pitted green olives")),
                     new ArrayList<String>(Arrays.asList("Make the dough: Put 2 cups boiling water, 4 ounces lard and 1 1/2 teaspoons salt in large mixing bowl. Stir to melt lard and dissolve salt. Cool to room temperature.",
@@ -132,7 +133,7 @@ public class RecipeRepository {
                     "Portugal", true, false),
 
 
-            new Recipe("DolsotBibimbap", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
+            new Recipe("Dolsot Bibimbap", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
                     new ArrayList<String>(Arrays.asList("1/2 cup dried shiitake mushrooms", "soy sauce", "toasted sesame oil", "6-7 ounces stir fry beef", "pinch of sugar", "fresh ground black pepper", "vegetable oil, or any neutral flavored high heat oil", "1 large or 2 small carrots, cut into matchsticks", "1 zucchini, cut into matchsticks",
                     "3 cups packed spinach", "1 tablespoon garlic, minced", "2/3 cup bean sprouts", "2 teaspoons toasted sesame seeds", "2 large eggs, preferably pasteurized", "2 cups cooked white rice", "Gochujang chili paste")),
                     new ArrayList<String>(Arrays.asList("Rehydrate the shiitake mushrooms in hot water until soft, approximately 25 minutes. Drain and then toss with 1/2 tablespoon soy sauce and 1/2 tablespoon toasted sesame oil. Set aside.",
@@ -155,7 +156,17 @@ public class RecipeRepository {
         getAllRecipes().add(recipeToAdd);
     }
 
-    public Recipe findByName(String name) {
+    public List<Recipe>searchForRecipe(String search){
+        List<Recipe>searchRecipe = new ArrayList<>();
+        for(Recipe recipe : ALL_RECIPES){
+            if(search.equalsIgnoreCase(recipe.getName()) || search.equalsIgnoreCase(recipe.getRegion()) || recipe.getTags().contains(search) || recipe.getIngredients().contains(search)){
+                searchRecipe.add(recipe);
+            }
+        }
+        return searchRecipe;
+    }
+
+    public Recipe findByName(@PathVariable String name) {
         for (Recipe recipe : ALL_RECIPES) {
             if (recipe.getName().equalsIgnoreCase(name)){
                 return recipe;
@@ -163,5 +174,7 @@ public class RecipeRepository {
         }
         return null;
     }
+
+
 
 }
