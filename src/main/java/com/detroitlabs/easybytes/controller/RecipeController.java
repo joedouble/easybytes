@@ -46,14 +46,11 @@ public class RecipeController {
         Recipe recipeToAdd =  new Recipe(name, new ArrayList<String>(Arrays.asList(tag)),
                 new ArrayList<String>(Arrays.asList("Filler ingredient String")),
                 new ArrayList<String>(Arrays.asList(description)),
-                "Recipe Region", false);
+                "Recipe Region", false, true);
 
         recipeRepository.addRecipe(recipeToAdd);
 
-        System.out.println("--------> ADDED: " + recipeRepository.getAllRecipes().size() );
-
         return "addrecipe";
-
     }
 
     @RequestMapping("/aboutus")
