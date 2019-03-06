@@ -4,9 +4,7 @@ import com.detroitlabs.easybytes.model.Recipe;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class RecipeRepository {
@@ -175,6 +173,18 @@ public class RecipeRepository {
         return null;
     }
 
+    public List<Recipe> showAllRecipesAlpha(){
+        List<Recipe> recipesSortedAlpha = new ArrayList<>();
+        recipesSortedAlpha.addAll(getAllRecipes());
+
+        Collections.sort(recipesSortedAlpha, new Comparator<Recipe>() {
+            @Override
+            public int compare(Recipe recipe1, Recipe recipe2) {
+                return recipe1.getName().compareTo(recipe2.getName());
+            }
+        });
+        return  recipesSortedAlpha;
+    }
 
 
 }
