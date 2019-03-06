@@ -11,8 +11,9 @@ public class Recipe {
     private String region;
     private boolean favorite;
     private boolean addedByUser;
+    private String author;
 
-    public Recipe(String name, List<String> tags, List<String> ingredients, List<String> instructionParagraphs, String region, boolean favorite, boolean addedByUser) {
+    public Recipe(String name, List<String> tags, List<String> ingredients, List<String> instructionParagraphs, String region, boolean favorite, boolean addedByUser, String author) {
         this.name = name;
         this.pictureName = this.name.toLowerCase().replace(" ", "");
         this.tags = tags;
@@ -21,14 +22,14 @@ public class Recipe {
         this.region = region;
         this.favorite = favorite;
         this.addedByUser = addedByUser;
+        this.author = author;
 
         checkToSetDefaultImage(this.addedByUser);
     }
 
-
-    private void checkToSetDefaultImage(boolean isAdded){
-        if(isAdded){
-            //TODO add stuffzzz here
+    private void checkToSetDefaultImage(boolean addedByUser){
+        if(addedByUser){
+            this.pictureName = "default";
         }
     }
 
@@ -94,5 +95,13 @@ public class Recipe {
 
     public void setAddedByUser(boolean addedByUser) {
         this.addedByUser = addedByUser;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

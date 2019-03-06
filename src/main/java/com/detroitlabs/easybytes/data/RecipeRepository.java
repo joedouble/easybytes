@@ -20,7 +20,7 @@ public class RecipeRepository {
                             "\n To cook the dumplings, boil them or pan-fry them. To boil, simple bring a large pot of water to a boil, drop the dumplings in, and cook until they float to the top and the skins are cooked through, but still slightly al dente.",
                             "\nTo pan-fry, heat 2 tablespoons oil in a non-stick pan over medium high heat. Place the dumplings in the pan and allow to fry for 2 minutes. Pour a thin layer of water into the pan, cover, and reduce heat to medium-low. Allow dumplings to steam until the water has evaporated. Remove the cover, increase heat to medium-high and allow to fry for a few more minutes, until the bottoms of the dumplings are golden brown and crisp.",
                             "\nServe with soy sauce, Chinese black vinegar, chili sauce, or other dipping sauce of your choice!")),
-                    "China", false, false),
+                    "China", false, false, "Joe"),
 
 
             new Recipe("Sloppy Joe", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -30,7 +30,7 @@ public class RecipeRepository {
                             "\nAdd onion and bell pepper to same skillet and cook 2-3 minutes, until soft.  Add garlic and cook 30 seconds or so, until fragrant.  Add beef back to the skillet and add tomato paste.  Stir well.",
                             "\nAdd ketchup, water, brown sugar, mustard, chili powder, Worcestershire sauce, salt, red pepper flakes (if using), and black pepper.  Stir well to combine",
                             "\nCook over MED heat for 10-15 minutes, until mixture has thickened to your liking.  Remove from heat and serve over toasted buns.")),
-                    "America", true, false),
+                    "America", true, false, "Brian"),
 
 
             new Recipe("Chicken Shawarma", new ArrayList<String>(Arrays.asList("Best", "Great", "OMG", "Chicken")),
@@ -43,7 +43,7 @@ public class RecipeRepository {
                             "\nSpread the marinated chicken with the onions in one layer on a large lightly-oiled baking sheet pan. Roast for 30 minutes in the 425 degrees F heated-oven. For a more browned, crispier chicken, move the pan to the top rack and broil very briefly (watch carefully). Remove from the oven",
                             "\nWhile the chicken is roasting, prepare the pita pockets. Make tahini sauce according to this recipe or Tztaziki sauce according to this recipe. Make 3-ingredient Mediterranean salad according to this recipe. Set aside.",
                             "\nTo serve, open pita pockets up. Spread a little tahini sauce or Tzatziki sauce, add chicken shawarma, arugula, Mediterranean salad and pickles or olives, if you like. Serve immediately!")),
-                    "Mediterranean", true, false),
+                    "Mediterranean", true, false, "Jamie"),
 
 
             new Recipe("Murgh Makhani", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
@@ -54,7 +54,7 @@ public class RecipeRepository {
                             "\n Remove from heat, add the mixture to a blender and blend until smooth, you may need to add a couple water to help it blend (up to ¼ cup).  Depending on how powerful your blender is, you may want to blend the mixture in two batches. Remember to hold the lid of the blender down with a kitchen towel when blending, to avoid accidents.",
                             "\nMAKE AHEAD OPTION: At this point you can cool and refrigerate the sauce for 24-48 hours (or freeze it for up to 3 months), it will help blend the flavors even more, just remember to bring the sauce back to room temperature (use the microwave) before proceeding with the recipe OR you can continue on with the recipe immediately.",
                             "\nHeat the remaining tablespoon of oil in the dutch oven over medium heat. Add the marinated chicken (discard any excess marinade) and cook for about 5-6 minutes, stirring as required to brown all sides. Add the butter chicken sauce to the pot and heat everything through. Once it starts to bubble, add the cream and garam masala. When the sauce regains a simmer, add the crushed fenugreek leaves. Serve over basmati rice or with naan.")),
-                    "India", false, false),
+                    "India", false, false, "Joe"),
 
 
             new Recipe("Sushi", new ArrayList<String>(Arrays.asList("indian", "buffet", "India", "spicy")),
@@ -73,7 +73,7 @@ public class RecipeRepository {
                             "\nTake a sheet of cling film and lighty cover your sushi roll. Place the bamboo rolling mat (this time without the plastic bag covering) on top and gently apply pressure to further shape the roll. Remove the mat but leave the cling film in place.",
                             "\nMoisten your knife by drawing it across a dampened cloth. This prevents the rice from sticking to the blade. Cut the roll in half and place both halves side by side. Cut each half into 4 pieces. (If you want really neat pieces, first cut off both ends of the roll and eat them right away to have a taste of what’s to come.) Keep moistening your knife between cuts.",
                             "\nArrange the sushi pieces neatly on a plate and add a scoop of pickled ginger at the side. Drizzle some teriyaki sauce over the sushi pieces. Finish by sprinkling toasted sesame seeds over the roll for added crunch.")),
-                    "Japan", false, false),
+                    "Japan", false, false, "Jamie"),
 
 
             new Recipe("Mici", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -81,7 +81,7 @@ public class RecipeRepository {
                     new ArrayList<String>(Arrays.asList("In a medium bowl, mix together the ground beef, suet, baking soda, caraway seeds, garlic, salt, pepper and juniper berries using your hands. Mix with your hands for about 15 minutes, adding a little bit of the water at a time. This part can be made a few hours ahead of time if you like.",
                             "\nPreheat a grill for high heat. With wet hands form the meat into rolls about 3 inches long and 1 inch thick. Brush lightly with oil.",
                             "\nGrill the meat for 5 to 10 minutes, basting frequently with a mixture of beef broth and any remaining oil, until well done.")),
-                    "Romania", true, false),
+                    "Romania", true, false, "Brian"),
 
 
             new Recipe("Churros", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -89,7 +89,7 @@ public class RecipeRepository {
                     new ArrayList<String>(Arrays.asList("In a small saucepan over medium heat, combine water, 2 1/2 tablespoons sugar, salt and 2 tablespoons vegetable oil. Bring to a boil and remove from heat. Stir in flour until mixture forms a ball.",
                             "\nHeat oil for frying in deep-fryer or deep skillet to 375 degrees F (190 degrees C). Pipe strips of dough into hot oil using a pastry bag. Fry until golden; drain on paper towels.",
                             "\nCombine 1/2 cup sugar and cinnamon. Roll drained churros in cinnamon and sugar mixture.")),
-                    "Spain", true, false),
+                    "Spain", true, false, "Joe"),
 
 
             new Recipe("Pad Thai", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -102,7 +102,7 @@ public class RecipeRepository {
                             "\nPush everything to the side of the pan. Add a little more oil and add the beaten eggs. Scramble the eggs, breaking them into small pieces with a spatula as they cook.",
                             "\nAdd noodles, sauce, bean sprouts and peanuts to the pan (reserving some peanuts for topping at the end). Toss everything to combine.",
                             "\nTop with green onions, extra peanuts, cilantro and lime wedges. Serve immediately!")),
-                    "Thailand", true, false),
+                    "Thailand", true, false, "Brian"),
 
 
             new Recipe("Beef Empanadas", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -116,7 +116,7 @@ public class RecipeRepository {
                             "\nDivide chilled dough into 1-ounce pieces and form into 2-inch diameter balls. Roll each piece into a 4 1/2-inch circle. Lay circles on a baking sheet lightly dusted with flour.",
                             "\nMoisten outer edge of each round with water. Put about 2 tablespoons filling in the center of each round, adding a little chopped green olive and some hard-cooked egg to each. Wrap dough around filling to form empanada, pressing edges together. Fold edge back and finish by pinching little pleats or crimping with a fork.",
                             "\nHeat oven to 375 degrees. Place empanadas on parchment-lined or oiled baking sheet, about 1 inch apart. Brush tops lightly with lard or butter and bake on top shelf of oven until golden, 10 to 15 minutes. Serve warm.")),
-                    "Mexico", false, false),
+                    "Mexico", false, false, "Jamie"),
 
 
             new Recipe("Bacalau", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -128,7 +128,7 @@ public class RecipeRepository {
                             "\nWhile the potatoes are cooking, melt the butter in a large skillet over medium heat. Add the onions, and saute until golden and caramelized. Stir one clove of garlic into the onions. Set aside.",
                             "\nLayer half of the potato slices in the bottom of a greased 8x11 inch baking dish. Cover with half of the cod, then half of the onions. Repeat layers, ending with onion.",
                             "\nBake for 15 minutes in the preheated oven, until lightly browned. Before serving, garnish the top with green and black olives, and hard-cooked eggs. Sprinkle with remaining parsley.")),
-                    "Portugal", true, false),
+                    "Portugal", true, false, "Brian"),
 
 
             new Recipe("Dolsot Bibimbap", new ArrayList<String>(Arrays.asList("Meat", "soft", "China", "round")),
@@ -141,7 +141,7 @@ public class RecipeRepository {
                             "\nIf using a regular bowl, divide the rice evenly between the two bowls and then place small mounds of the beef, mushrooms, carrots, zucchini, spinach and bean sprouts on top of the rice. Top with toasted sesame seeds.",
                             "\nCook the egg sunny side up on a lightly oil skillet and place on top of the beef and vegetables.",
                             "\nServe with Gochujang.")),
-                    "Korea", false, false)
+                    "Korea", false, false, "Joe")
 
 
     ));

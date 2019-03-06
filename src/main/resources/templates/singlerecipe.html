@@ -29,6 +29,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/elegant_icon.css}">
     <!-- Font Awesome -->
     <link rel="stylesheet" th:href="@{/assets/css/fontawesome-all.min.css}">
+    <link rel="stylesheet" th:href="@{/app.css}">
 
 </head>
 
@@ -49,11 +50,9 @@
                     <div class="col-lg-8 col-md-12 position-inherit">
                         <ul id="menu-main"
                             class="white-link dropdown-dark text-lg-center nav-menu link-padding-tb-17px">
-                            <li><a th:href="@{/}">Home</a></li>
+                            <li><a class="active" th:href="@{/}">Home</a></li>
                             <li><a th:href="@{/allrecipes}">Recipes</a></li>
-                            <li><a th:href="@{/aboutus}">About Us </a></li>
                             <li><a th:href="@{/addrecipe}">Add Recipe</a></li>
-                            <!--<li><a href="login.html">Login Page</a></li>-->
                         </ul>
                     </div>
 
@@ -64,6 +63,7 @@
     </div>
 </header>
 <!-- // Header  -->
+
 
 <div id="page-title" class="padding-tb-30px gradient-white">
     <div class="container text-left">
@@ -101,14 +101,17 @@
                     </ol>
                     <hr>
                     <div class="row no-gutters">
-                        <div class="col-4 text-left text-red"><i th:class="(${singleRecipe.favorite} ? 'far' : 'fas') + ' fa-heart'"></i> Save</div>
+                        <div class="col-4 text-left text-red"><i th:class="(${singleRecipe.favorite} ? 'fas' : 'far') + ' fa-heart'"></i> Save</div>
                         </div>
                     </div>
                 </div>
                 <div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">
-                    <a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img
-                            src="assets/img/zoal-8.jpg" class="height-30px border-radius-30 margin-right-15px" alt="">
-                        Salim Aldosery</a>
+                    <a href="#"  class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px">
+                        <img th:text="${singleRecipe.author}"
+                                th:src="'/assets/img/' + ${singleRecipe.author} + '.jpg'"
+                                class="height-30px border-radius-30 margin-right-15px"
+                                alt="">
+                    </a>
                 </div>
             </div>
 
