@@ -58,13 +58,13 @@
                         </ul>
                     </div>
                     <!--<div class="col-lg-2 col-md-12">-->
-                        <!--<hr class="margin-bottom-0px d-block d-sm-none">-->
-                        <!--<a href="addrecipe.html"-->
-                           <!--class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                                <!--class="fas fa-plus"></i></a>-->
-                        <!--<a href="login.html"-->
-                           <!--class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
-                                <!--class="far fa-user"></i></a>-->
+                    <!--<hr class="margin-bottom-0px d-block d-sm-none">-->
+                    <!--<a href="addrecipe.html"-->
+                    <!--class="text-white ba-2 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
+                    <!--class="fas fa-plus"></i></a>-->
+                    <!--<a href="login.html"-->
+                    <!--class="text-white ba-1 box-shadow float-right padding-lr-23px padding-tb-15px text-extra-large"><i-->
+                    <!--class="far fa-user"></i></a>-->
                     <!--</div>-->
                 </div>
 
@@ -74,7 +74,8 @@
 </header>
 <!-- // Header  -->
 
-<div class="banner padding-tb-20px background-overlay" th:style="'background-image: url(' + @{/assets/img/banner_1.jpg} + ');'">
+<div class="banner padding-tb-20px background-overlay"
+     th:style="'background-image: url(' + @{/assets/img/banner_1.jpg} + ');'">
     <div class="container">
 
         <div class="padding-tb-120px z-index-2 position-relative">
@@ -89,7 +90,8 @@
                             <form th:action="@{/search}" method="get" class="row no-gutters">
                                 <div class="col-md-4">
                                     <div class="keywords">
-                                        <input th:name ="q" class="listing-form first" type="text" placeholder="Keywords..."
+                                        <input th:name="q" class="listing-form first" type="text"
+                                               placeholder="Keywords..."
                                                value="">
                                     </div>
                                 </div>
@@ -127,44 +129,14 @@
 <div class="pull-top-85px">
     <div class="container">
         <div class="row">
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-                <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-                    <div class="thum"><img src="images/thailandIcon.jpg" alt=""></div>
-                    <h4 class="text-center padding-15px">Thailand</h4>
-                </a>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="images/spainIcon.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Spain</h4>
+        <div  th:each="region : ${allRegions}" class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
+            <a th:href="@{'/search/' + ${region.region}}" class="d-block box-shadow background-main-color text-white hvr-float">
+                <div class="thum"><img th:src="@{'/images/' + ${region.region} + '.jpg'}" alt="jpg"></div>
+                <h4 th:text="${region.region}" class="text-center padding-15px"></h4>
             </a>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="images/japanIcon.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Japan</h4>
-            </a>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="images/mexicanIcon.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Mexico</h4>
-            </a>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="images/americaIcon.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">America</h4>
-            </a>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 sm-mb-25px">
-            <a href="#" class="d-block box-shadow background-main-color text-white hvr-float">
-            <div class="thum"><img src="images/portugalIcon.jpg" alt=""></div>
-            <h4 class="text-center padding-15px">Portugal</h4>
-            </a>
-            </div>
         </div>
     </div>
+</div>
 </div>
 
 
@@ -185,11 +157,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px" th:each="recipe : ${allRecipes}">
                 <div class="card border-0 box-shadow">
                     <div class="card-img-top">
-                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
+                        <a th:href="@{'/singlerecipe/' + ${recipe.name}}"><img
+                                th:src="@{'/images/' + ${recipe.name} + '.jpg'}" alt="jpg"></a>
                     </div>
                     <div class="padding-lr-30px padding-tb-20px">
                         <h5 class="margin-bottom-20px margin-top-10px">
-                            <a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}" th:text="${recipe.name}">Recipe Name</a>
+                            <a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}"
+                               th:text="${recipe.name}">Recipe Name</a>
                         </h5>
                         <hr>
                         <div class="row no-gutters">

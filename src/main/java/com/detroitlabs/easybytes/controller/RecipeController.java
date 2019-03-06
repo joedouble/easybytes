@@ -1,6 +1,7 @@
 package com.detroitlabs.easybytes.controller;
 
 import com.detroitlabs.easybytes.data.RecipeRepository;
+import com.detroitlabs.easybytes.data.RegionRepository;
 import com.detroitlabs.easybytes.model.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,15 @@ public class RecipeController {
 
     @Autowired
     private RecipeRepository recipeRepository;
+    @Autowired
+    private RegionRepository regionRepository;
 
     @RequestMapping("/")
     public String displayHomepage(ModelMap modelMap){
         modelMap.put("allRecipes", recipeRepository.getAllRecipes());
+
+        modelMap.put("allRegions", regionRepository.getAll_Regions());
+
         return "index";
     }
 
@@ -44,12 +50,6 @@ public class RecipeController {
     public String gifDetails(@PathVariable String name, ModelMap modelMap){
         Recipe singleRecipe = recipeRepository.findByName(name);
         modelMap.put("singleRecipe", singleRecipe);
-        return "singlerecipe";
-    }
-    @RequestMapping("/singlerecipe/{region}")
-    public String regionRecipe(@PathVariable String region, ModelMap modelMap){
-        Recipe recipeRegion = recipeRepository.findbyRegion(region);
-        modelMap.put("recipeRegion", recipeRegion);
         return "singlerecipe";
     }
 

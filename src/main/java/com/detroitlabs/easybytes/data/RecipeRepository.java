@@ -173,14 +173,18 @@ public class RecipeRepository {
         return null;
     }
 
-    public Recipe findbyRegion(String region){
-        for(Recipe recipe : ALL_RECIPES) {
-       if(recipe.getRegion().equalsIgnoreCase(region)){
-           return recipe;
-       }
+
+    public List<Recipe> showRecipeByRegion(String region){
+
+        List<Recipe> recipes = new ArrayList<>();
+        for (Recipe recipe: ALL_RECIPES){
+            if (recipe.getRegion().equalsIgnoreCase(region)) {
+                recipes.add(recipe);
+            }
         }
-        return null;
+        return recipes;
     }
+
 
 
 
