@@ -10,7 +10,7 @@ import java.util.*;
 public class RecipeRepository {
 
 
-    private static List<Recipe> ALL_RECIPES = new ArrayList<>(Arrays.asList(
+    private List<Recipe> ALL_RECIPES = new ArrayList<>(Arrays.asList(
             new Recipe("Dumpling", new ArrayList<String>(Arrays.asList("Meat", "buns", "China", "veggie")),
                     new ArrayList<String>(Arrays.asList("3 lbs green leafy vegetable", " 1 ½ pounds ground pork", " 2/3 cup shaoxing wine", "½ cup oil", "3 tablespoons sesame oil", "1 tablespoon salt", "3 tablespoons soy sauce", "¼ teaspoon white pepper", "2/3 cup water, plus more for assembly", "3-4 packages dumpling wrappers")),
                     new ArrayList<String>(Arrays.asList("Wash your vegetables thoroughly and blanch them in a pot of boiling water. Transfer them to an ice bath to cool. Ring out all the water from the vegetables and chop very finely.",
@@ -186,5 +186,8 @@ public class RecipeRepository {
         return  recipesSortedAlpha;
     }
 
+    public void setAllRecipes(List<Recipe> newRecipeList){
+        ALL_RECIPES = newRecipeList;
+    }
 
 }
