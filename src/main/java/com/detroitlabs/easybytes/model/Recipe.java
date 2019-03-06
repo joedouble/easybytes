@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Recipe {
     private String name;
+    private String pictureName;
     private List<String> tags;
     private List<String> ingredients;
     private List<String> instructionParagraphs;
@@ -12,6 +13,7 @@ public class Recipe {
 
     public Recipe(String name, List<String> tags, List<String> ingredients, List<String> instructionParagraphs, String region, boolean favorite) {
         this.name = name;
+        this.pictureName = this.name.toLowerCase().replace(" ", "");
         this.tags = tags;
         this.ingredients = ingredients;
         this.instructionParagraphs = instructionParagraphs;
@@ -25,6 +27,14 @@ public class Recipe {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPictureName() {
+        return pictureName;
+    }
+
+    public void setPictureName(String pictureName) {
+        this.pictureName = pictureName;
     }
 
     public List<String> getTags() {

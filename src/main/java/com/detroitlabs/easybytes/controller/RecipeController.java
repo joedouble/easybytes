@@ -3,6 +3,7 @@ package com.detroitlabs.easybytes.controller;
 import com.detroitlabs.easybytes.data.RecipeRepository;
 import com.detroitlabs.easybytes.model.NewRecipe;
 import com.detroitlabs.easybytes.model.Recipe;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,6 +55,7 @@ public class RecipeController {
         return "addrecipe";
 
     }
+
     @RequestMapping("/aboutus")
     public String aboutUs(){
         return "aboutus";
@@ -71,6 +73,12 @@ public class RecipeController {
         Recipe singleRecipe = recipeRepository.findByName(name);
         modelMap.put("singleRecipe", singleRecipe);
         return "singlerecipe";
+    }
+
+    @RequestMapping("/allrecipes")
+    public String allRecipes(ModelMap modelMap){
+        modelMap.put("allRecipes", recipeRepository.getAllRecipes());
+        return "allrecipes";
     }
 
 }
