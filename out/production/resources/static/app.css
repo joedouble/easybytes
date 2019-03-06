@@ -1,0 +1,8 @@
+header ul.nav-menu > li > a {
+	font-size: 25px;
+}
+
+a.active {
+	color: white;
+	opacity: 1;
+}

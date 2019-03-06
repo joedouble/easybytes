@@ -1,14 +1,20 @@
 package com.detroitlabs.easybytes.controller;
 
 import com.detroitlabs.easybytes.data.RecipeRepository;
+import com.detroitlabs.easybytes.model.NewRecipe;
 import com.detroitlabs.easybytes.data.RegionRepository;
 import com.detroitlabs.easybytes.model.Recipe;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.util.MultiValueMap;
+import org.springframework.util.SocketUtils;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import java.util.List;
 
@@ -29,8 +35,27 @@ public class RecipeController {
         return "index";
     }
 
-    @RequestMapping("/addrecipe")
-    public String addRecipe(){
+    @GetMapping ("/addrecipe")
+    public String addRecipe(Model model){
+        model.addAttribute("newRecipe", new NewRecipe());
+        return "addrecipe";
+    }
+
+    @PostMapping("/addrecipe")
+    public String submitNewRecipe(@ModelAttribute NewRecipe newRecipe){
+
+        String name = newRecipe.getName();
+        String tag = newRecipe.getTag();
+        String description = newRecipe.getDescription();
+
+
+        Recipe recipeToAdd =  new Recipe(name, new ArrayList<String>(Arrays.asList(tag)),
+                new ArrayList<String>(Arrays.asList("Filler ingredient String")),
+                new ArrayList<String>(Arrays.asList(description)),
+                "Recipe Region", false, true, "Added by User");
+
+        recipeRepository.addRecipe(recipeToAdd);
+
         return "addrecipe";
     }
 
@@ -47,10 +72,16 @@ public class RecipeController {
     }
 
     @RequestMapping("/singlerecipe/{name}")
-    public String gifDetails(@PathVariable String name, ModelMap modelMap){
+    public String singleRecipe(@PathVariable String name, ModelMap modelMap){
         Recipe singleRecipe = recipeRepository.findByName(name);
         modelMap.put("singleRecipe", singleRecipe);
         return "singlerecipe";
+    }
+
+    @RequestMapping("/allrecipes")
+    public String allRecipes(ModelMap modelMap){
+        modelMap.put("allRecipes", recipeRepository.showAllRecipesAlpha());
+        return "allrecipes";
     }
 
 }

@@ -1,10 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title>Easy Bytes Recipe Finder</title>
+	<meta name="author" content="Nile-Theme">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CPoppins:100,200,300i,300,400,700,400i,500%7CDancing+Script:700"
+		  rel="stylesheet">
+	<!-- animate -->
+	<link rel="stylesheet" th:href="@{/assets/css/animate.css}"/>
+	<!-- owl Carousel assets -->
+	<link th:href="@{/assets/css/owl.carousel.css}" rel="stylesheet">
+	<link th:href="@{/assets/css/owl.theme.css}" rel="stylesheet">
+	<!-- bootstrap -->
+	<link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+	<!-- hover anmation -->
+	<link rel="stylesheet" th:href="@{/assetss/css/hover-min.css}">
+	<!-- flag icon -->
+	<link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+	<!-- main style -->
+	<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+	<!-- colors -->
+	<link rel="stylesheet" th:href="@{/assets/css/colors/main.css}">
+	<!-- elegant icon -->
+	<link rel="stylesheet" th:href="@{/assets/css/elegant_icon.css}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" th:href="@{/assets/css/fontawesome-all.min.css}">
+	<link rel="stylesheet" th:href="@{/app.css}">
+
+
 </head>
+
+
 <body>
 
+<header class="background-main-color">
+	<div class="container">
+		<div class="header-output">
+			<div class="header-in">
+
+				<div class="row">
+					<div class="col-lg-2 col-md-12">
+						<a id="logo" th:href="@{/}" class="d-inline-block margin-tb-5px"><img
+								th:src="@{assets/img/logo-small.png}" alt=""></a>
+						<a class="mobile-toggle padding-13px background-main-color" href="#"><i class="fas fa-bars"></i></a>
+					</div>
+					<div class="col-lg-8 col-md-12 position-inherit">
+						<ul id="menu-main"
+							class="white-link dropdown-dark text-lg-center nav-menu link-padding-tb-17px">
+							<li><a th:href="@{/}">Home</a></li>
+							<li><a th:href="@{/allrecipes}">Recipes</a></li>
+							<li><a th:href="@{/addrecipe}">Add Recipe</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</header>
+<!-- // Header  -->
+
+	<div id="page-title" class="padding-tb-30px gradient-white">
+		<div class="container text-left">
+			<ol class="breadcrumb opacity-5">
+				<li><a href="#">Home</a></li>
+				<li class="active">recipes</li>
+			</ol>
+			<h1 class="font-weight-300">All Recipes</h1>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="margin-bottom-60px">
+			<div class="listing-search box-shadow">
+				<form th:action="@{/search}" method="get" class="row no-gutters">
+					<div class="col-md-4">
+						<div class="keywords">
+							<input th:name="q" class="listing-form first" type="text" placeholder="Keywords..." value="">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="categories dropdown">
+							<a class="listing-form d-block text-nowrap" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Categories</a>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								<button class="dropdown-item text-up-small" type="button">Fish</button>
+								<button class="dropdown-item text-up-small" type="button">Cocktails</button>
+								<button class="dropdown-item text-up-small" type="button">Salads</button>
+								<button class="dropdown-item text-up-small" type="button">Asian</button>
+								<button class="dropdown-item text-up-small" type="button">Fish</button>
+								<button class="dropdown-item text-up-small" type="button">Cocktails</button>
+								<button class="dropdown-item text-up-small" type="button">Salads</button>
+								<button class="dropdown-item text-up-small" type="button">Asian</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<input type="submit" class="listing-bottom border-radius-10 background-second-color box-shadow">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container margin-bottom-100px">
+
+		<div class="recipes-masonry row">
+
+			<!-- Recipe Item -->
+			<div class="col-xl-3 col-lg-4 col-md-6 recipe-item margin-bottom-40px" th:each="recipe : ${allRecipes}">
+				<div class="card border-0 box-shadow">
+					<div class="card-img-top">
+						<a th:href="@{'/singlerecipe/' + ${recipe.name}}">
+							<img th:src="@{'/images/' + ${recipe.pictureName} + '.jpg'}" alt="jpg">
+						</a>
+					</div>
+					<div class="padding-lr-30px padding-tb-20px">
+						<h5 class="margin-bottom-20px margin-top-10px">
+							<a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}" th:text="${recipe.name}">Recipe Name</a></h5>
+						<hr>
+						<div class="row no-gutters">
+							<div class="col-4 text-left text-red"><i th:class="(${recipe.favorite} ? 'fas' : 'far') + ' fa-heart'"></i> Save</div>
+						</div>
+					</div>
+					<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">
+						<a href="#" class="d-inline-block text-grey-3 h6 margin-bottom-0px margin-right-15px"><img th:text="${recipe.author}" th:src="'/assets/img/' + ${recipe.author} + '.jpg'" class="height-30px border-radius-30 margin-right-15px" alt=""></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+<div class="instgram-feed">
+	<div class="row no-gutters">
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-1.jpg" alt></a>
+		</div>
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-2.jpg" alt></a>
+		</div>
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-3.jpg" alt></a>
+		</div>
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-4.jpg" alt></a>
+		</div>
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-5.jpg" alt></a>
+		</div>
+		<div class="col-md-2 col-6">
+			<a href="#"><img src="assets/img/instgram-6.jpg" alt></a>
+		</div>
+	</div>
+</div>
+
+<div class="padding-tb-10px background-main-color"></div>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/sticky-sidebar.js"></script>
+<script src="assets/js/YouTubePopUp.jquery.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/imagesloaded.min.js"></script>
+<script src="assets/js/masonry.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 </body>
+
+
 </html>
