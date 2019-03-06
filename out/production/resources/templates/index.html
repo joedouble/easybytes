@@ -29,6 +29,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/elegant_icon.css}">
     <!-- Font Awesome -->
     <link rel="stylesheet" th:href="@{/assets/css/fontawesome-all.min.css}">
+    <link rel="stylesheet" th:href="@{/app.css}">
 
 </head>
 
@@ -104,7 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="listing-bottom background-second-color box-shadow" href="#">Search Now</a>
+                                    <input type="submit" class="listing-bottom border-radius-10 background-second-color box-shadow">
                                 </div>
                             </form>
                         </div>
@@ -188,8 +189,7 @@
                         </h5>
                         <hr>
                         <div class="row no-gutters">
-                            <div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a>
-                            </div>
+                            <div class="col-4 text-left text-red"><i th:class="(${recipe.favorite} ? 'far' : 'fas') + ' fa-heart'"></i> Save</div>
                         </div>
                     </div>
                     <div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">
@@ -238,16 +238,17 @@
 
 <div class="padding-tb-10px background-main-color"></div>
 
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/sticky-sidebar.js"></script>
-<script src="assets/js/YouTubePopUp.jquery.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/imagesloaded.min.js"></script>
-<script src="assets/js/masonry.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/custom.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script th:src="@{assets/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{assets/js/sticky-sidebar.js}"></script>
+<script th:src="@{assets/js/YouTubePopUp.jquery.js}"></script>
+<script th:src="@{assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{assets/js/imagesloaded.min.js}"></script>
+<script th:src="@{assets/js/masonry.min.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+<script th:src="@{assets/js/custom.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+
 </body>
 
 </html>

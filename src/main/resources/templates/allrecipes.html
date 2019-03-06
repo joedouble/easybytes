@@ -101,7 +101,7 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<a class="listing-bottom background-second-color box-shadow" href="#">Search Now</a>
+						<input type="submit" class="listing-bottom border-radius-10 background-second-color box-shadow">
 					</div>
 				</form>
 			</div>
@@ -127,7 +127,7 @@
 							<a class="text-dark" th:href="@{'/singlerecipe/' + ${recipe.name}}" th:text="${recipe.name}">Recipe Name</a></h5>
 						<hr>
 						<div class="row no-gutters">
-							<div class="col-4 text-left"><a href="#" class="text-red"><i class="far fa-heart"></i> Save</a></div>
+							<div class="col-4 text-left text-red"><i th:class="(${recipe.favorite} ? 'far' : 'fas') + ' fa-heart'"></i> Save</div>
 						</div>
 					</div>
 					<div class="background-light-grey border-top-1 border-grey padding-lr-30px padding-tb-20px">
