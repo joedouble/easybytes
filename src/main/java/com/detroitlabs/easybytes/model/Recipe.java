@@ -9,14 +9,25 @@ public class Recipe {
     private List<String> instructionParagraphs;
     private String region;
     private boolean favorite;
+    private boolean addedByUser;
 
-    public Recipe(String name, List<String> tags, List<String> ingredients, List<String> instructionParagraphs, String region, boolean favorite) {
+    public Recipe(String name, List<String> tags, List<String> ingredients, List<String> instructionParagraphs, String region, boolean favorite, boolean addedByUser) {
         this.name = name;
         this.tags = tags;
         this.ingredients = ingredients;
         this.instructionParagraphs = instructionParagraphs;
         this.region = region;
         this.favorite = favorite;
+        this.addedByUser = addedByUser;
+
+        checkToSetDefaultImage(this.addedByUser);
+    }
+
+
+    private void checkToSetDefaultImage(boolean isAdded){
+        if(isAdded){
+            //TODO add stuffzzz here
+        }
     }
 
     public String getName() {
@@ -65,5 +76,13 @@ public class Recipe {
 
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
+    }
+
+    public boolean isAddedByUser() {
+        return addedByUser;
+    }
+
+    public void setAddedByUser(boolean addedByUser) {
+        this.addedByUser = addedByUser;
     }
 }

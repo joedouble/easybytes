@@ -42,8 +42,6 @@ public class RecipeRepositoryTest {
 
         assertEquals("test recipe", actualNameOfAddedRecipe);
 
-        assertEquals(5, testRepository.getAllRecipes().size());
-
     }
 
    @Test
