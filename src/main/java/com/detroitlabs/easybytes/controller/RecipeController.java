@@ -2,6 +2,7 @@ package com.detroitlabs.easybytes.controller;
 
 import com.detroitlabs.easybytes.data.RecipeRepository;
 import com.detroitlabs.easybytes.model.NewRecipe;
+import com.detroitlabs.easybytes.data.RegionRepository;
 import com.detroitlabs.easybytes.model.Recipe;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,15 @@ public class RecipeController {
 
     @Autowired
     private RecipeRepository recipeRepository;
+    @Autowired
+    private RegionRepository regionRepository;
 
     @RequestMapping("/")
     public String displayHomepage(ModelMap modelMap){
         modelMap.put("allRecipes", recipeRepository.getAllRecipes());
+
+        modelMap.put("allRegions", regionRepository.getAll_Regions());
+
         return "index";
     }
 

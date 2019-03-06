@@ -164,7 +164,7 @@ public class RecipeRepository {
         return searchRecipe;
     }
 
-    public Recipe findByName(@PathVariable String name) {
+    public Recipe findByName(String name) {
         for (Recipe recipe : ALL_RECIPES) {
             if (recipe.getName().equalsIgnoreCase(name)){
                 return recipe;
@@ -189,5 +189,18 @@ public class RecipeRepository {
     public void setAllRecipes(List<Recipe> newRecipeList){
         ALL_RECIPES = newRecipeList;
     }
+    public List<Recipe> showRecipeByRegion(String region){
+
+        List<Recipe> recipes = new ArrayList<>();
+        for (Recipe recipe: ALL_RECIPES){
+            if (recipe.getRegion().equalsIgnoreCase(region)) {
+                recipes.add(recipe);
+            }
+        }
+        return recipes;
+    }
+
+
+
 
 }
