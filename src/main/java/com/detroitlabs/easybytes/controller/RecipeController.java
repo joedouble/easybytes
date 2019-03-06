@@ -40,13 +40,15 @@ public class RecipeController {
 
         String name = newRecipe.getName();
         String tag = newRecipe.getTag();
+        String ingredients = newRecipe.getIngredients();
         String description = newRecipe.getDescription();
+        String region = newRecipe.getRegion();
 
 
         Recipe recipeToAdd =  new Recipe(name, new ArrayList<String>(Arrays.asList(tag)),
-                new ArrayList<String>(Arrays.asList("Filler ingredient String")),
+                new ArrayList<String>(Arrays.asList(ingredients)),
                 new ArrayList<String>(Arrays.asList(description)),
-                "Recipe Region", false, true, "Added by User");
+                region, false, true, "Added by user");
 
         recipeRepository.addRecipe(recipeToAdd);
 

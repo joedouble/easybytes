@@ -94,10 +94,20 @@
                            id="ListingTag" placeholder="Recipe tag">
                 </div>
                 <div class="form-group margin-bottom-20px">
+                    <label><i class="far fa-list-alt margin-right-10px"></i> Ingredients</label>
+                    <input th:name="recipeIngredients" th:field="*{ingredients}" type="text" class="form-control form-control-sm"
+                           id="ListingIngredients" placeholder="Recipe ingredients">
+                </div>
+                <div class="form-group margin-bottom-20px">
                     <label><i class="far fa-list-alt margin-right-10px"></i> Recipe Description</label>
                     <input th:name="recipeDescription" th:field="*{description}" type="text"
                            class="form-control form-control-sm" id="ListingDescription"
                            placeholder="Recipe description">
+                </div>
+                <div class="form-group margin-bottom-20px">
+                    <label><i class="far fa-list-alt margin-right-10px"></i> Region</label>
+                    <input th:name="recipeRegion" th:field="*{region}" type="text" class="form-control form-control-sm"
+                           id="ListingRegion" placeholder="Recipe region of origin">
                 </div>
                 <button type="submit">Submit Recipe</button>
 
