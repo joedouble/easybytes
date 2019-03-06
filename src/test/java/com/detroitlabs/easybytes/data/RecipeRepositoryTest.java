@@ -12,44 +12,55 @@ import static org.junit.Assert.*;
 
 public class RecipeRepositoryTest {
 
-    RecipeRepository testRepository;
-    Recipe testRecipe;
+    RecipeRepository testRecipeRepository;
+    Recipe testRecipeOne;
+    Recipe testRecipeTwo;
+    Recipe testRecipeThree;
 
     @Before
     public void create(){
-      testRepository = new RecipeRepository();
+      testRecipeRepository = new RecipeRepository();
 
-    testRecipe = new Recipe("test recipe", new ArrayList<String>(Arrays.asList("test tags")),
+    testRecipeOne = new Recipe("test recipe", new ArrayList<String>(Arrays.asList("test tags")),
               new ArrayList<String>(Arrays.asList("test ingredients")),
             new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
+
+
+        testRecipeTwo = new Recipe("B test recipe", new ArrayList<String>(Arrays.asList("test tags")),
+                new ArrayList<String>(Arrays.asList("test ingredients")),
+                new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
+
+        testRecipeThree = new Recipe("A test recipe", new ArrayList<String>(Arrays.asList("test tags")),
+                new ArrayList<String>(Arrays.asList("test ingredients")),
+                new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
 
     }
 
    @Test
-    public void getAllRecipes() {
+    public void shouldGetAllRecipes() {
 
         int expectedSize = 11;
 
-       List<Recipe> actualRepositoryRecipeList = testRepository.getAllRecipes();
+       List<Recipe> actualRepositoryRecipeList = testRecipeRepository.getAllRecipes();
 
        assertEquals(expectedSize, actualRepositoryRecipeList.size());
 
     }
 
     @Test
-    public void addRecipe() {
+    public void shouldAddRecipe() {
         int expectedinitialNumberOfRecipes = 11;
         int expectedNumberOfRecipesAfterAddingRecipe = 12;
 
-        List<Recipe> actualRepositoryRecipeList = testRepository.getAllRecipes();
+        List<Recipe> actualRepositoryRecipeList = testRecipeRepository.getAllRecipes();
 
         assertEquals(expectedinitialNumberOfRecipes, actualRepositoryRecipeList.size());
 
-        testRepository.addRecipe(testRecipe);
+        testRecipeRepository.addRecipe(testRecipeOne);
 
-        assertEquals(expectedNumberOfRecipesAfterAddingRecipe, testRepository.getAllRecipes().size());
+        assertEquals(expectedNumberOfRecipesAfterAddingRecipe, testRecipeRepository.getAllRecipes().size());
 
-       List<Recipe> actualRecipes = testRepository.getAllRecipes();
+       List<Recipe> actualRecipes = testRecipeRepository.getAllRecipes();
         String actualNameOfAddedRecipe = actualRecipes.get(actualRecipes.size() - 1).getName();
 
         assertEquals("test recipe", actualNameOfAddedRecipe);
@@ -57,6 +68,42 @@ public class RecipeRepositoryTest {
     }
 
     @Test
-    public void
+    public void shouldFindByName(){
+        testRecipeRepository.addRecipe(testRecipeOne);
+
+        Recipe actualRecipeFound = testRecipeRepository.findByName("test recipe");
+
+        assertEquals("test recipe", actualRecipeFound.getName());
+        assertEquals("test region", actualRecipeFound.getRegion());
+        assertEquals(true, actualRecipeFound.isFavorite());
+    }
+
+    @Test
+    public void shouldReturnNullIfNameNotFound(){
+        String knownNotToBeInRecipeNames = "Brian";
+
+      Recipe actualRecipeReturned =  testRecipeRepository.findByName(knownNotToBeInRecipeNames);
+
+      assertEquals(null, actualRecipeReturned);
+
+    }
+
+    @Test
+    public void shouldReturnRecipesInAlphabeticalOrderByName(){
+
+        List<Recipe> testRecipes = new ArrayList<>(Arrays.asList(testRecipeOne, testRecipeTwo, testRecipeThree));
+
+        testRecipeRepository.setAllRecipes(testRecipes);
+
+        List<Recipe> actualRecipesInAlphaOrder = testRecipeRepository.showAllRecipesAlpha();
+
+        String nameOfFirstActualIndex = actualRecipesInAlphaOrder.get(0).getName();
+        String nameOfSecondActualIndex = actualRecipesInAlphaOrder.get(1).getName();
+        String nameOfThirdActualIndex = actualRecipesInAlphaOrder.get(2).getName();
+
+        assertEquals("A test recipe", nameOfFirstActualIndex);
+        assertEquals("B test recipe", nameOfSecondActualIndex);
+        assertEquals("test recipe", nameOfThirdActualIndex);
+    }
 
 }

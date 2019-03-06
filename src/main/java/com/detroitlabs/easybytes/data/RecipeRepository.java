@@ -186,5 +186,8 @@ public class RecipeRepository {
         return  recipesSortedAlpha;
     }
 
+    public void setAllRecipes(List<Recipe> newRecipeList){
+        ALL_RECIPES = newRecipeList;
+    }
 
 }
