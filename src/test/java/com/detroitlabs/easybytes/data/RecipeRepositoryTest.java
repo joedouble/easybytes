@@ -22,7 +22,7 @@ public class RecipeRepositoryTest {
       testRecipeRepository = new RecipeRepository();
 
     testRecipeOne = new Recipe("test recipe", new ArrayList<String>(Arrays.asList("test tags")),
-              new ArrayList<String>(Arrays.asList("test ingredients")),
+              new ArrayList<String>(Arrays.asList("lard")),
             new ArrayList<String>(Arrays.asList("test description")), "China", true, false);
 
 
@@ -31,7 +31,7 @@ public class RecipeRepositoryTest {
                 new ArrayList<String>(Arrays.asList("test description")), "test region", true, false);
 
         testRecipeThree = new Recipe("A test recipe", new ArrayList<String>(Arrays.asList("bread")),
-                new ArrayList<String>(Arrays.asList("test ingredients")),
+                new ArrayList<String>(Arrays.asList("lard")),
                 new ArrayList<String>(Arrays.asList("test description")), "china", true, false);
 
     }
@@ -74,7 +74,7 @@ public class RecipeRepositoryTest {
         Recipe actualRecipeFound = testRecipeRepository.findByName("test recipe");
 
         assertEquals("test recipe", actualRecipeFound.getName());
-        assertEquals("test region", actualRecipeFound.getRegion());
+        assertEquals("China", actualRecipeFound.getRegion());
         assertEquals(true, actualRecipeFound.isFavorite());
     }
 
@@ -160,4 +160,19 @@ public class RecipeRepositoryTest {
         assertEquals(2, actualSearchResults.size());
     }
 
+
+    @Test
+    public void shouldReturnRecipesIfSearchValueEqualsIngredient(){
+        String searchValue = "lard";
+
+        List<Recipe> testRecipes = new ArrayList<>(Arrays.asList(testRecipeOne, testRecipeTwo, testRecipeThree));
+
+        testRecipeRepository.setAllRecipes(testRecipes);
+
+        List<Recipe> actualSearchResults = testRecipeRepository.searchForRecipe(searchValue);
+
+        assertEquals(2, actualSearchResults.size());
+        assertEquals("test recipe", actualSearchResults.get(0).getName());
+        assertEquals("A test recipe", actualSearchResults.get(1).getName());
+    }
 }
